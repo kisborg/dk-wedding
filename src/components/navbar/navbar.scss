@@ -1,0 +1,48 @@
+@use '../../app/styles/fontSizes' as fontSizes;
+@use '../../app/styles/colors' as colors;
+@import '../../app/styles/breakpoints';
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11111;
+  background-color: rgba(250, 234, 214, 0.5);
+  color: colors.$primary-color;
+
+  transition: 200ms ease;
+
+  &.hidden {
+    top: -70px;
+  }
+
+  .nav-menu-item {
+    line-height: 70px;
+    font-size: fontSizes.$font-size-navbar;
+    font-weight: fontSizes.$font-weight-bold;
+    vertical-align: center;
+    white-space: nowrap;
+    cursor: pointer;
+    flex: 1;
+    text-align: center;
+    &:hover {
+      letter-spacing: 2px;
+      font-size: fontSizes.$font-size-navbar-hover;
+      transition:
+        font-size 1000ms,
+        letter-spacing 1000ms;
+    }
+
+    transition:
+      font-size 1000ms,
+      letter-spacing 1000ms;
+
+    @include tablet {
+      font-size: 14px;
+    }
+  }
+}
