@@ -1,9 +1,23 @@
 .intro {
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  padding: 120px 80px 50px 80px;
-  background: url('../../assets/bg-0.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+  background:
+    url('../../assets/Blueberry_arrangement_9.png') no-repeat right bottom,
+    url('../../assets/Blueberry_arrangement_8.png') no-repeat left top 20%;
+  background-size: 200px;
+  .logo {
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+  }
+  .intro-image {
+    width: 100%;
+    height: auto;
+    max-width: 550px;
+    box-shadow: inset;
+  }
 }

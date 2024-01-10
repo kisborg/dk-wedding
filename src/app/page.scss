@@ -1,19 +1,60 @@
+@use './styles/colors' as colors;
+
 .main {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 6rem 0 6rem;
+  justify-content: center;
   height: 100vh;
   width: 100%;
   overflow-y: scroll;
   overflow-x: hidden;
-  scroll-snap-type: y mandatory;
-  scroll-behavior: smooth;
+  background: linear-gradient(
+      rgba(colors.$beige, 0.4),
+      rgba(colors.$beige, 0.4)
+    ),
+    url('../assets/Blueberry_background_1.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
 
   &::-webkit-scrollbar {
     width: 0;
     display: none;
+  }
+
+  .attribution {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 8px;
+  }
+
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    width: 80%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    background: rgba(colors.$beige, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      display: none;
+    }
+
+    #page-container {
+      height: 100%;
+      width: 100%;
+      position: relative;
+    }
+
+    .page {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 
@@ -21,33 +62,6 @@
   position: fixed;
   top: 0;
   left: 0;
-}
-
-.description {
-  display: inherit;
-  justify-content: inherit;
-  align-items: inherit;
-  font-size: 0.85rem;
-  max-width: var(--max-width);
-  width: 100%;
-  z-index: 2;
-  font-family: var(--font-mono);
-}
-
-.description a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.description p {
-  position: relative;
-  margin: 0;
-  padding: 1rem;
-  background-color: rgba(var(--callout-rgb), 0.5);
-  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
-  border-radius: var(--border-radius);
 }
 
 .code {
@@ -62,23 +76,17 @@
   width: var(--max-width);
 }
 
-.section {
-  height: 100vh;
-  width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 120px 80px 50px 80px;
-}
-
-.our-big-day {
-  background: url('../assets/bg-2.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
-}
+// .section {
+//   height: 100vh;
+//   width: 100vw;
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   padding: 120px 80px 50px 80px;
+// }
 
 #our-big-day {
-  height: 100vh;
+  height: 100%;
 }
 
 .frame {

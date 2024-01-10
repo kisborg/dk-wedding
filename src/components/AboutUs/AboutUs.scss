@@ -1,8 +1,20 @@
 .about-us {
-  height: 100vh;
+  height: 100%;
   width: 100%;
-  padding: 120px 80px 50px 80px;
-  background: url('../../assets/bg-1.jpg');
-  background-size: cover;
-  background-repeat: no-repeat;
+
+  .animation-container {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.box {
+  h1 {
+    font-size: 18px;
+  }
+  height: 50px;
+  width: 50px;
+  background-color: aquamarine;
 }

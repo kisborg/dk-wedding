@@ -1,8 +1,13 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import './navbar.scss';
+import { Page } from '@/app/page';
 
-const Navbar = () => {
+interface NavigationProps {
+  onNavigation: (page: Page) => void;
+}
+
+const Navbar = ({ onNavigation }: NavigationProps) => {
   const navbarRef = useRef<HTMLElement>(null);
   useEffect(() => {
     if (navbarRef.current) {
@@ -35,22 +40,23 @@ const Navbar = () => {
       }
     }
   });
+
   return (
     <nav ref={navbarRef} id='navbar'>
       <div className='nav-menu-item'>
-        <a href='#intro'>Home</a>
+        <a onClick={() => onNavigation('intro')}>Home</a>
       </div>
       <div className='nav-menu-item'>
-        <a href='#about-us'>About Us</a>
+        <a onClick={() => onNavigation('about-us')}>About Us</a>
       </div>
       <div className='nav-menu-item'>
-        <a href='#schedule'>Our Big Day</a>
+        <a onClick={() => onNavigation('schedule')}>Our Big Day</a>
       </div>
       <div className='nav-menu-item'>
-        <a href='#rsvp'>RSVP</a>
+        <a onClick={() => onNavigation('rsvp')}>RSVP</a>
       </div>
       <div className='nav-menu-item'>
-        <a href='#faq'>FAQ</a>
+        <a onClick={() => onNavigation('faq')}>FAQ</a>
       </div>
     </nav>
   );

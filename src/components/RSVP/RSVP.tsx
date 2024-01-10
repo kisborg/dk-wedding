@@ -50,8 +50,7 @@ const RSVP = () => {
           </div>
           <div id='emailInput' className='inputSection'>
             <p className='inputLabel'>
-              Let us know your email if you want to get updates as we get closer
-              to the big event
+              Let us know your email, so we can send you updates
             </p>
             <input autoComplete='off' type='email'></input>
           </div>
