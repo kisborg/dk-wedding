@@ -1,7 +1,7 @@
 'use client';
 import './page.scss';
 import Navbar from '@/components/navbar/Navbar';
-import Section from '../components/Section/Section';
+import Section from '../../components/Section/Section';
 import Intro from '@/components/Intro/Intro';
 import AboutUs from '@/components/AboutUs/AboutUs';
 import Schedule from '@/components/Schedule/Schedule';

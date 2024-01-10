@@ -1,5 +1,5 @@
 import { addDoc, collection, Timestamp } from 'firebase/firestore/lite';
-import { firestore } from './firebaseConfig';
+import { firestore } from '../utils/firebaseConfig';
 
 export type RSVPFormData = {
   name: string | undefined;

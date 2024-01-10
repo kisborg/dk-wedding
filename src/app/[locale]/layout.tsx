@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Petit_Formal_Script } from 'next/font/google';
-import './styles/globals.scss';
+import '../styles/globals.scss';
+import { NextIntlClientProvider, useMessages } from 'next-intl';
 
 const petitFormal = Petit_Formal_Script({ weight: '400', subsets: ['latin'] });
 
@@ -11,12 +12,19 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
+  params: { locale },
 }: {
   children: React.ReactNode;
+  params: { locale: string };
 }) {
+  const messages = useMessages();
   return (
-    <html lang='en'>
-      <body className={petitFormal.className}>{children}</body>
+    <html lang={locale}>
+      <body className={petitFormal.className}>
+        <NextIntlClientProvider locale={locale} messages={messages}>
+          {children}
+        </NextIntlClientProvider>
+      </body>
     </html>
   );
 }

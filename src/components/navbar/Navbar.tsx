@@ -1,7 +1,9 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import './navbar.scss';
-import { Page } from '@/app/page';
+import { Page } from '@/app/[locale]/page';
+import { useTranslations } from 'next-intl';
+import LanguageSwitcher from './language-switcher/LanguageSwitcher';
 
 interface NavigationProps {
   onNavigation: (page: Page) => void;
@@ -9,6 +11,7 @@ interface NavigationProps {
 
 const Navbar = ({ onNavigation }: NavigationProps) => {
   const navbarRef = useRef<HTMLElement>(null);
+  const t = useTranslations('Navbar');
   useEffect(() => {
     if (navbarRef.current) {
       const navbar = navbarRef.current;
@@ -43,20 +46,23 @@ const Navbar = ({ onNavigation }: NavigationProps) => {
 
   return (
     <nav ref={navbarRef} id='navbar'>
-      <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('intro')}>Home</a>
+      <div className='language-switcher'>
+        <LanguageSwitcher />
       </div>
       <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('about-us')}>About Us</a>
+        <a onClick={() => onNavigation('intro')}>{t('home')}</a>
       </div>
       <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('schedule')}>Our Big Day</a>
+        <a onClick={() => onNavigation('about-us')}>{t('aboutUs')}</a>
       </div>
       <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('rsvp')}>RSVP</a>
+        <a onClick={() => onNavigation('schedule')}>{t('schedule')}</a>
       </div>
       <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('faq')}>FAQ</a>
+        <a onClick={() => onNavigation('rsvp')}>{t('rsvp')}</a>
+      </div>
+      <div className='nav-menu-item'>
+        <a onClick={() => onNavigation('faq')}>{t('faq')}</a>
       </div>
     </nav>
   );

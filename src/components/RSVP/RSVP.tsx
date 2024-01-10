@@ -1,6 +1,6 @@
 import { useRef, useState } from 'react';
 import './RSVP.scss';
-import { RSVPFormData, sendRSVPForm } from '@/app/sendRSVPForm';
+import { RSVPFormData, sendRSVPForm } from '@/app/[locale]/sendRSVPForm';
 
 const RSVP = () => {
   const formRef = useRef<HTMLFormElement>(null);

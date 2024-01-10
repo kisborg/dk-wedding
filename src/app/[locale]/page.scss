@@ -1,4 +1,4 @@
-@use './styles/colors' as colors;
+@use '../styles/colors' as colors;
 
 .main {
   display: flex;
@@ -11,7 +11,7 @@
       rgba(colors.$beige, 0.4),
       rgba(colors.$beige, 0.4)
     ),
-    url('../assets/Blueberry_background_1.jpg');
+    url('../../assets/Blueberry_background_1.jpg');
   background-size: cover;
   background-repeat: no-repeat;
 
