@@ -5,7 +5,7 @@ const RSVP = () => {
     <div className='rsvp'>
       <div className='formContainer'>
         <div className='title'>
-          <h1>When we say "I do", will we be seeing you?</h1>
+          <h1>When we say I do, will we be seeing you?</h1>
           <p>(Please, reply before April 30.)</p>
         </div>
         <form>

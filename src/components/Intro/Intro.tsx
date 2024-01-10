@@ -1,13 +1,17 @@
 import Logo from '../Logo/Logo';
-import './intro.scss';
+import styles from './intro.module.scss';
 import MainImage from '../../assets/dk-bg.png';
 import Image from 'next/image';
 
 const Intro = () => {
   return (
-    <div className='intro'>
+    <div className={styles.intro}>
       <Logo />
-      <Image alt='main-image' className='intro-image' src={MainImage}></Image>
+      <Image
+        alt='main-image'
+        className={styles['intro-image']}
+        src={MainImage}
+      ></Image>
     </div>
   );
 };

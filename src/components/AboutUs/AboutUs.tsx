@@ -11,7 +11,11 @@ const boxVariant = {
   },
   hidden: { opacity: 0, scale: 0 },
 };
-const Box = ({ num }) => {
+
+type BoxProps = {
+  num: number;
+};
+const Box = ({ num }: BoxProps) => {
   const control = useAnimation();
   const [ref, inView] = useInView();
   useEffect(() => {
