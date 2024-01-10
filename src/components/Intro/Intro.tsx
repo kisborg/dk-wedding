@@ -1,5 +1,5 @@
 import Logo from '../Logo/Logo';
-import styles from './intro.module.scss';
+import styles from './Intro.module.scss';
 import MainImage from '../../assets/dk-bg.png';
 import Image from 'next/image';
 
