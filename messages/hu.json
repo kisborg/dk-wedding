@@ -5,5 +5,33 @@
     "rsvp": "RSVP",
     "schedule": "A Nagy Nap",
     "faq": "GYÍK"
+  },
+  "RSVP": {
+    "willAttend": "Ott leszel/lesztek velünk a nagy napunkon?",
+    "foodAllergy": "Kérlek jelezd alább, amennyiben fennáll bármilyen étellel kapcsolatos érzékenység/allergia, amiről fontos, hogy tudjunk.",
+    "accomodation_title": "Szállás",
+    "accomodation_intro": "A vacsora és buli helyszínén (Rosinante Fogadó, cím: …) szálláshely foglalható limitált fő részére jelentkezési sorrend szerint.",
+    "accomodation_prices": "A szállás ára (reggelivel):",
+    "accomodation_prices_adults": "Felnőtteknek: 17.000 Ft/fő/éj",
+    "accomodation_prices_kids": "4-10 éves kor között: 7000 Ft/fő/éj",
+    "accomodation_prices_kids_small": "4 éves kor alatt ingyenes",
+    "accomodation_alternatives": "Ha ezek a szobák beteltek, akkor tudunk segíteni további szálláshely szervezésében.",
+    "accomodation_yes": "Kérek szállást",
+    "accomodation_no": "Nem kérek szállást",
+    "accomodation_unknown": "Még nem tudom",
+    "accomodation_num_of_guests": "Hány főre kérsz szállást?",
+    "transportation_title": "Utazás",
+    "transportation_intro": "Mivel az esküvő napján két különböző helyszínen lesz a program, ezért szeretnénk felajánlani segítségünket azoknak, akik nem tudnak autóval érkezni.",
+    "transportation_intro_p2": "A következő tranzit lehetőséget tudjuk erre biztosítani:",
+    "transportation_to_ceremony": "Tranzit a szentendrei HÉV állomástól a Skanzenba.",
+    "transportation_to_venue": "Tranzit a Skanzenből a Rosinantéba.",
+    "transportation_no": "Kérek utazásban segítséget",
+    "transportation_yes": "Nem kérek segítséget",
+    "thankyou": "Köszönjük szépen a visszajelzést, alig várjuk, hogy együtt ünnepelhessünk a nagy napunkon :)",
+    "signature": "Kriszti & Dani & Bendi",
+    "yes": "Igen",
+    "no": "Nem",
+    "other": "Egyéb (kérlek add meg a részleteket)",
+    "sorry_cannot_attend": "Sajnáljuk, hogy nem tudsz/tudtok részt venni. Köszönjük szépen a visszajelzést!"
   }
 }

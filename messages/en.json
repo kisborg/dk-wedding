@@ -5,5 +5,33 @@
     "rsvp": "RSVP",
     "schedule": "Our Big Day",
     "faq": "FAQ"
+  },
+  "RSVP": {
+    "willAttend": "Will you join us for our Big day?",
+    "foodAllergy": "Please let us know below about any food intolerance/allergy that we should consider?",
+    "accomodation_title": "Accomodation",
+    "accomodation_intro": "At the dinner and party venue (Rosinante Country Inn, address:...) there will be a limited number of rooms available to book on a first come first serve basis.",
+    "accomodation_prices": "Prices are as follows (breakfast included):",
+    "accomodation_prices_adults": "Adults: 17.000 HUF/person/night",
+    "accomodation_prices_kids": "Kids between the ages of 4 - 10: 7.000 HUF/person/night",
+    "accomodation_prices_kids_small": "Kids below 4 are free of charge",
+    "accomodation_alternatives": "In case all rooms have been booked at the venue, we can help you find alternative accomodation.",
+    "accomodation_yes": "I would like accommodation",
+    "accomodation_no": "I don’t need accomodation",
+    "accomodation_unknown": "I don't know yet",
+    "accomodation_num_of_guests": "How many people would you like accommodation for?",
+    "transportation_title": "Travel",
+    "transportation_intro": "The wedding will be hosted on two separate venues hence why we would like to offer our assistance for those who can not come by car.",
+    "transportation_intro_p2": "As such we are offering the following transit possibilities:",
+    "transportation_to_ceremony": "Transit from Szentendre local train (HÉV) station to Skanzen.",
+    "transportation_to_venue": "Transit from Skanzen to Rosinante.",
+    "transportation_no": "I require assistance",
+    "transportation_yes": "I do not require assistance",
+    "thankyou": "Thank you for responding, we are looking forward to celebrating with you on our big day :)",
+    "signature": "Kriszti & Dani & Bendi",
+    "yes": "Yes",
+    "no": "No",
+    "other": "Other (please, provide details)",
+    "sorry_cannot_attend": "We are sorry you can’t make it! Thank you for your confirmation!"
   }
 }

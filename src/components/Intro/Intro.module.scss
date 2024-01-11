@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300..700&display=swap');
+
 .intro {
   height: 100%;
   width: 100%;
@@ -9,10 +12,62 @@
     url('../../assets/Blueberry_arrangement_9.png') no-repeat right bottom,
     url('../../assets/Blueberry_arrangement_8.png') no-repeat left top 20%;
   background-size: 200px;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+
   .intro-image {
     width: 100%;
     height: auto;
-    max-width: 550px;
+    max-width: 400px;
     box-shadow: inset;
+  }
+
+  .dayandyear {
+    font-family: 'Old Standard TT', serif;
+    font-weight: 500;
+    font-style: normal;
+    font-size: 40px;
+    text-align: center;
+    width: 30%;
+  }
+  .date {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    align-items: center;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .dayintext {
+    font-family: 'Quicksand', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: 35%;
+    text-align: center;
+    vertical-align: middle;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
+    line-height: 50px;
+  }
+
+  .month {
+    font-family: 'Quicksand', sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    width: 35%;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 50px;
+    border-top: 2px solid;
+    border-bottom: 2px solid;
   }
 }

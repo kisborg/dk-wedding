@@ -1,9 +1,12 @@
 import type { Metadata } from 'next';
-import { Petit_Formal_Script } from 'next/font/google';
 import '../styles/globals.scss';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
+import localFont from 'next/font/local';
 
-const petitFormal = Petit_Formal_Script({ weight: '400', subsets: ['latin'] });
+const nickainley = localFont({
+  src: '../../assets/fonts/Nickainley-Normal.woff',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +23,7 @@ export default function RootLayout({
   const messages = useMessages();
   return (
     <html lang={locale}>
-      <body className={petitFormal.className}>
+      <body className={nickainley.className}>
         <NextIntlClientProvider locale={locale} messages={messages}>
           {children}
         </NextIntlClientProvider>

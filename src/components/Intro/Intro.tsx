@@ -12,6 +12,14 @@ const Intro = () => {
         className={styles['intro-image']}
         src={MainImage}
       ></Image>
+      <div className={styles.date}>
+        <div className={styles.month}>JUNE</div>
+        <div className={styles.dayandyear}>
+          8<br />
+          2024
+        </div>
+        <div className={styles.dayintext}>SATURDAY</div>
+      </div>
     </div>
   );
 };

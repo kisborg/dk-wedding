@@ -1,6 +1,12 @@
 .about-us {
   height: 100%;
   width: 100%;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
 
   .animation-container {
     height: 100%;
