@@ -3,7 +3,7 @@ import './RSVP.scss';
 import { RSVPFormData, sendRSVPForm } from '@/app/[locale]/sendRSVPForm';
 import { ProgressBar } from '../ProgressBar/ProgressBar';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { AnimatePresence, motion, stagger } from 'framer-motion';
 import { Tooltip } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '../Logo/Logo';
@@ -33,6 +33,7 @@ const RSVP = () => {
     accomodationGuestNumber: undefined,
     needTransportation: undefined,
   };
+
   const [formData, setFormData] = useState<RSVPFormData>(emptyFormData);
   const [currentStep, setCurrentStep] = useState(1);
   const [hasValidationError, setHasValidationError] = useState<boolean>(false);
@@ -46,7 +47,6 @@ const RSVP = () => {
     return () => {
       setFormData(emptyFormData);
       setCurrentStep(1);
-      formRef.current?.reset();
     };
   }, []);
   const handleFoodRequestChange = (
@@ -190,7 +190,6 @@ const RSVP = () => {
 
       setCurrentStep(6);
     }
-    console.log(formData);
   };
   return (
     <div className='rsvp'>
@@ -202,104 +201,45 @@ const RSVP = () => {
           <div className='formContainer'>
             {currentStep <= 5 && (
               <form ref={formRef} noValidate onSubmit={submitContact}>
-                {currentStep === 1 && (
-                  <motion.div className='step-1 form-section'>
-                    <div className='title'>
-                      <h1>{t('willAttend')}</h1>
-                      <p>{t('replyBefore')}</p>
-                    </div>
-                    <div id='nameInput' className='inputSection'>
-                      <p className='inputLabel'>{t('name')}</p>
-                      <Tooltip
-                        open={!formData.name && hasValidationError}
-                        arrow
-                        title={t('rsvpValidation.name')}
-                      >
-                        <input
-                          autoComplete='off'
-                          id='name'
-                          type='text'
-                          value={formData.name}
-                          onChange={handleNameChange}
-                          onFocus={() => setHasValidationError(false)}
-                          required
-                        ></input>
-                      </Tooltip>
-                    </div>
-
-                    <Tooltip
-                      open={!formData.willAttend && hasValidationError}
-                      arrow
-                      title={t('rsvpValidation.selectOption')}
+                <AnimatePresence>
+                  {currentStep === 1 && (
+                    <motion.div
+                      key='step1'
+                      animate={{ y: 0, opacity: 1 }}
+                      transition={{ duration: 0.5 }}
+                      initial={{ y: -100, opacity: 0 }}
+                      exit={{
+                        y: 100,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                      className='step-1 form-section'
                     >
-                      <div
-                        className='radioButtonContainer'
-                        onFocus={() => setHasValidationError(false)}
-                      >
-                        <label className='radioGroup'>
+                      <div className='title'>
+                        <h1>{t('willAttend')}</h1>
+                        <p>{t('replyBefore')}</p>
+                      </div>
+                      <div id='nameInput' className='inputSection'>
+                        <p className='inputLabel'>{t('name')}</p>
+                        <Tooltip
+                          open={!formData.name && hasValidationError}
+                          arrow
+                          title={t('rsvpValidation.name')}
+                        >
                           <input
                             autoComplete='off'
-                            name='willAttend'
-                            type='radio'
-                            value='Yes'
-                            onChange={handleWillAttendRadioButtonChange}
+                            id='name'
+                            type='text'
+                            value={formData.name}
+                            onChange={handleNameChange}
+                            onFocus={() => setHasValidationError(false)}
                             required
                           ></input>
-                          <span>{t('yes')}</span>
-                        </label>
-                        <label className='radioGroup'>
-                          <input
-                            autoComplete='off'
-                            name='willAttend'
-                            type='radio'
-                            value='No'
-                            onChange={handleWillAttendRadioButtonChange}
-                          ></input>
-                          <span>{t('no')}</span>
-                        </label>
+                        </Tooltip>
                       </div>
-                    </Tooltip>
-                  </motion.div>
-                )}
-                {currentStep === 2 && (
-                  <motion.div className='step-2 form-section'>
-                    <div id='foodRequestInput' className='inputSection'>
-                      <h1 className='section-title'>{t('foodAllergy')}</h1>
-                      <textarea
-                        id='foodRequest'
-                        placeholder={t('foodAllergyPlaceholder')}
-                        value={formData.mealRequest}
-                        onChange={handleFoodRequestChange}
-                      ></textarea>
-                    </div>
-                  </motion.div>
-                )}
-                {currentStep === 3 && (
-                  <motion.div className='step-3 form-section'>
-                    <div id='accomodationInput' className='inputSection'>
-                      <div className='accomodation-intro'>
-                        <p>{t('accomodation_intro')}</p>
-                        <p>{t('accomodation_prices')}</p>
-                        <ul className='price-list'>
-                          <li>
-                            {t.rich('accomodation_prices_adults', {
-                              bold: (chunks) => <b>{chunks}</b>,
-                            })}
-                          </li>
-                          <li>
-                            {t.rich('accomodation_prices_kids', {
-                              bold: (chunks) => <b>{chunks}</b>,
-                            })}
-                          </li>
-                          <li>
-                            {t.rich('accomodation_prices_kids_small', {
-                              bold: (chunks) => <b>{chunks}</b>,
-                            })}
-                          </li>
-                        </ul>
-                      </div>
+
                       <Tooltip
-                        open={!formData.needAccomodation && hasValidationError}
+                        open={!formData.willAttend && hasValidationError}
                         arrow
                         title={t('rsvpValidation.selectOption')}
                       >
@@ -310,114 +250,291 @@ const RSVP = () => {
                           <label className='radioGroup'>
                             <input
                               autoComplete='off'
-                              name='accomodation'
+                              name='willAttend'
                               type='radio'
                               value='Yes'
-                              onChange={handleAccomodationRadioButtonChange}
+                              onChange={handleWillAttendRadioButtonChange}
                               required
                             ></input>
-                            <span>{t('accomodation_yes')}</span>
+                            <span>{t('yes')}</span>
                           </label>
                           <label className='radioGroup'>
                             <input
                               autoComplete='off'
-                              name='accomodation'
+                              name='willAttend'
                               type='radio'
                               value='No'
-                              onChange={handleAccomodationRadioButtonChange}
+                              onChange={handleWillAttendRadioButtonChange}
                             ></input>
-                            <span>{t('accomodation_no')}</span>
+                            <span>{t('no')}</span>
                           </label>
                         </div>
                       </Tooltip>
-                    </div>
-                  </motion.div>
-                )}
-                {currentStep === 4 && (
-                  <div className='step-4 form-section'>
-                    <h1 className='section-title'>
-                      {t('accomodation_num_of_guests')}
-                    </h1>
-                    <Tooltip
-                      open={
-                        !formData.accomodationGuestNumber && hasValidationError
-                      }
-                      arrow
-                      title={t('rsvpValidation.numberOfGuests')}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <AnimatePresence>
+                  {currentStep === 2 && (
+                    <motion.div
+                      key='step2'
+                      animate={{
+                        y: 0,
+                        position: 'static',
+                        opacity: 1,
+                        transition: { delay: 0.5 },
+                      }}
+                      transition={{ duration: 0.5 }}
+                      initial={{ y: -100, position: 'absolute', opacity: 0 }}
+                      exit={{
+                        y: 100,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                      className='step-2 form-section'
                     >
-                      <input
-                        onFocus={() => setHasValidationError(false)}
-                        type='number'
-                        value={formData.accomodationGuestNumber}
-                        onChange={handleAccomodationGuestNumberChange}
-                        required
-                      />
-                    </Tooltip>
-                  </div>
-                )}
-                {currentStep === 5 && (
-                  <motion.div className='step-5 form-section'>
-                    <div className='travel-intro'>
-                      <p>{t('transportation_intro')}</p>
-                      <p>{t('transportation_intro_p2')}</p>
-                      <ul className='transportation-list'>
-                        <li>{t('transportation_to_ceremony')}</li>
-                        <li>{t('transportation_to_venue')}</li>
-                      </ul>
-                    </div>
-                    <Tooltip
-                      arrow
-                      open={!formData.needTransportation && hasValidationError}
-                      title={t('rsvpValidation.selectOption')}
-                    >
-                      <div
-                        className='radioButtonContainer'
-                        onFocus={() => setHasValidationError(false)}
-                      >
-                        <label className='radioGroup'>
-                          <input
-                            autoComplete='off'
-                            name='transportation'
-                            type='radio'
-                            value='no'
-                            onChange={handletransportationRadioButtonChange}
-                          ></input>
-                          <span>{t('transportation_no')}</span>
-                        </label>
-                        <label className='radioGroup'>
-                          <input
-                            autoComplete='off'
-                            name='transportation'
-                            type='radio'
-                            value='yes'
-                            onChange={handletransportationRadioButtonChange}
-                            required
-                          ></input>
-                          <span>{t('transportation_yes')}</span>
-                        </label>
+                      <div id='foodRequestInput' className='inputSection'>
+                        <h1 className='section-title'>{t('foodAllergy')}</h1>
+                        <textarea
+                          id='foodRequest'
+                          placeholder={t('foodAllergyPlaceholder')}
+                          value={formData.mealRequest}
+                          onChange={handleFoodRequestChange}
+                        ></textarea>
                       </div>
-                    </Tooltip>
-                  </motion.div>
-                )}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <AnimatePresence>
+                  {currentStep === 3 && (
+                    <motion.div
+                      key='step3'
+                      animate={{
+                        y: 0,
+                        position: 'static',
+                        opacity: 1,
+                        transition: { delay: 0.5 },
+                      }}
+                      transition={{ duration: 0.5 }}
+                      initial={{ y: -100, position: 'absolute', opacity: 0 }}
+                      exit={{
+                        y: 100,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                      className='step-3 form-section'
+                    >
+                      <div id='accomodationInput' className='inputSection'>
+                        <div className='accomodation-intro'>
+                          <p>{t('accomodation_intro')}</p>
+                          <p>{t('accomodation_prices')}</p>
+                          <ul className='price-list'>
+                            <li>
+                              {t.rich('accomodation_prices_adults', {
+                                bold: (chunks) => <b>{chunks}</b>,
+                              })}
+                            </li>
+                            <li>
+                              {t.rich('accomodation_prices_kids', {
+                                bold: (chunks) => <b>{chunks}</b>,
+                              })}
+                            </li>
+                            <li>
+                              {t.rich('accomodation_prices_kids_small', {
+                                bold: (chunks) => <b>{chunks}</b>,
+                              })}
+                            </li>
+                          </ul>
+                        </div>
+                        <Tooltip
+                          open={
+                            !formData.needAccomodation && hasValidationError
+                          }
+                          arrow
+                          title={t('rsvpValidation.selectOption')}
+                        >
+                          <div
+                            className='radioButtonContainer'
+                            onFocus={() => setHasValidationError(false)}
+                          >
+                            <label className='radioGroup'>
+                              <input
+                                autoComplete='off'
+                                name='accomodation'
+                                type='radio'
+                                value='Yes'
+                                onChange={handleAccomodationRadioButtonChange}
+                                required
+                              ></input>
+                              <span>{t('accomodation_yes')}</span>
+                            </label>
+                            <label className='radioGroup'>
+                              <input
+                                autoComplete='off'
+                                name='accomodation'
+                                type='radio'
+                                value='No'
+                                onChange={handleAccomodationRadioButtonChange}
+                              ></input>
+                              <span>{t('accomodation_no')}</span>
+                            </label>
+                          </div>
+                        </Tooltip>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <AnimatePresence>
+                  {currentStep === 4 && (
+                    <motion.div
+                      className='step-4 form-section'
+                      key='step4'
+                      animate={{
+                        y: 0,
+                        position: 'static',
+                        opacity: 1,
+                        transition: { delay: 0.5 },
+                      }}
+                      transition={{ duration: 0.5 }}
+                      initial={{ y: -100, position: 'absolute', opacity: 0 }}
+                      exit={{
+                        y: 100,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                    >
+                      <h1 className='section-title'>
+                        {t('accomodation_num_of_guests')}
+                      </h1>
+                      <Tooltip
+                        open={
+                          !formData.accomodationGuestNumber &&
+                          hasValidationError
+                        }
+                        arrow
+                        title={t('rsvpValidation.numberOfGuests')}
+                      >
+                        <input
+                          onFocus={() => setHasValidationError(false)}
+                          type='number'
+                          value={formData.accomodationGuestNumber}
+                          onChange={handleAccomodationGuestNumberChange}
+                          required
+                        />
+                      </Tooltip>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+                <AnimatePresence>
+                  {currentStep === 5 && (
+                    <motion.div
+                      className='step-5 form-section'
+                      key='step5'
+                      animate={{
+                        y: 0,
+                        position: 'static',
+                        opacity: 1,
+                        transition: { delay: 0.5 },
+                      }}
+                      transition={{ duration: 0.5 }}
+                      initial={{ y: -100, position: 'absolute', opacity: 0 }}
+                      exit={{
+                        y: 100,
+                        opacity: 0,
+                        transition: { duration: 0.2 },
+                      }}
+                    >
+                      <div className='travel-intro'>
+                        <p>{t('transportation_intro')}</p>
+                        <p>{t('transportation_intro_p2')}</p>
+                        <ul className='transportation-list'>
+                          <li>{t('transportation_to_ceremony')}</li>
+                          <li>{t('transportation_to_venue')}</li>
+                        </ul>
+                      </div>
+                      <Tooltip
+                        arrow
+                        open={
+                          !formData.needTransportation && hasValidationError
+                        }
+                        title={t('rsvpValidation.selectOption')}
+                      >
+                        <div
+                          className='radioButtonContainer'
+                          onFocus={() => setHasValidationError(false)}
+                        >
+                          <label className='radioGroup'>
+                            <input
+                              autoComplete='off'
+                              name='transportation'
+                              type='radio'
+                              value='no'
+                              onChange={handletransportationRadioButtonChange}
+                            ></input>
+                            <span>{t('transportation_no')}</span>
+                          </label>
+                          <label className='radioGroup'>
+                            <input
+                              autoComplete='off'
+                              name='transportation'
+                              type='radio'
+                              value='yes'
+                              onChange={handletransportationRadioButtonChange}
+                              required
+                            ></input>
+                            <span>{t('transportation_yes')}</span>
+                          </label>
+                        </div>
+                      </Tooltip>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+
                 {currentStep < 5 && (
-                  <button type='button' onClick={checkValidity}>
-                    {t('next')}
-                  </button>
+                  <motion.div
+                    className='button-container'
+                    animate={{ opacity: 1 }}
+                    initial={{ opacity: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    <button type='button' onClick={checkValidity}>
+                      {t('next')}
+                    </button>
+                  </motion.div>
                 )}
                 {currentStep === 5 && <button type='submit'>RSVP</button>}
               </form>
             )}
+
             {currentStep === 6 && (
-              <div className='form-section step-6'>
+              <motion.div
+                className='form-section step-6'
+                key='step6'
+                animate={{
+                  position: 'static',
+                  opacity: 1,
+                  transition: { duration: 1.5, delay: 0.5 },
+                }}
+                initial={{ position: 'absolute', opacity: 0 }}
+              >
                 <h1>{t('thankyou')}</h1>
                 <p>{t('signature')}</p>
-              </div>
+              </motion.div>
             )}
+
             {currentStep === 7 && (
-              <div className='form-section step-7'>
+              <motion.div
+                className='form-section step-7'
+                key='step7'
+                animate={{
+                  position: 'static',
+                  opacity: 1,
+                  transition: { duration: 1.5, delay: 0.5 },
+                }}
+                initial={{ position: 'absolute', opacity: 0 }}
+              >
                 <h1>{t('sorry_cannot_attend')}</h1>
                 <p>{t('signature')}</p>
-              </div>
+              </motion.div>
             )}
             <div className='progress-container'>
               <ProgressBar currentStep={currentStep} totalSteps={6} />

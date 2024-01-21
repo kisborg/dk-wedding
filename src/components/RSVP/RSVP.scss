@@ -53,7 +53,10 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-
+      .button-container {
+        display: flex;
+        justify-content: center;
+      }
       /* CSS */
       button {
         background-color: colors.$blueberry-blue;
@@ -305,6 +308,7 @@
     flex-direction: column;
     align-items: center;
     width: 90%;
+
     .transportation-list {
       margin-left: 20px;
     }
@@ -385,6 +389,7 @@
     width: 90%;
     .accomodation-intro {
       p {
+        margin-bottom: 20px;
         font-size: fontSizes.$font-size-rsvp-paragraph-large;
         @include tablet {
           font-size: fontSizes.$font-size-rsvp-paragraph;
