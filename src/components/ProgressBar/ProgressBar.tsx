@@ -18,7 +18,7 @@ const progressBarAnimation = {
   hidden: { opacity: 0, scale: 0, transition: { duration: 0.5 } },
 };
 
-export function ProgressBar({ currentStep, totalSteps }) {
+export function ProgressBar({ currentStep, totalSteps }: IProgressBarProps) {
   const progress = React.useRef<HTMLDivElement>(null);
   const control = useAnimation();
 
