@@ -24,7 +24,7 @@ export function ProgressBar({ currentStep, totalSteps }: IProgressBarProps) {
 
   React.useEffect(() => {
     control.start('visible');
-  }, []);
+  }, [control]);
   React.useEffect(() => {
     if (progress.current) {
       progress.current.style.width = `${(currentStep / totalSteps) * 100}%`;
@@ -34,7 +34,7 @@ export function ProgressBar({ currentStep, totalSteps }: IProgressBarProps) {
     if (currentStep >= 6) {
       control.start('hidden');
     }
-  }, [currentStep, totalSteps]);
+  }, [currentStep, totalSteps, control]);
   return (
     <motion.div
       variants={progressBarAnimation}
