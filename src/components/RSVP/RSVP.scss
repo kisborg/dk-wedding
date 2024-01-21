@@ -1,110 +1,160 @@
 @use '../../app/styles/fontSizes' as fontSizes;
 @use '../../app/styles/_colors' as colors;
-
+@import '../../app/styles/breakpoints';
 .rsvp {
   color: colors.$blueberry-blue;
   height: 100%;
   width: 100%;
   height: 100%;
-  padding: 20px 80px 30px 80px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  background-image: linear-gradient(
+      rgba(colors.$beige, 0.5),
+      rgba(colors.$beige, 0.5)
+    ),
+    url('/images/Blueberry_left.png');
+  background-size:
+    cover,
+    auto 100%;
+  background-repeat: no-repeat, no-repeat;
+  background-position:
+    center,
+    -50px;
+  font-family: 'Quicksand', sans-serif;
 
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
   .formContainer {
-    border-radius: 10px;
-    text-align: center;
-    height: 100%;
+    padding-top: 20px;
     max-width: 600px;
+    width: 90%;
+    position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    @include mobile {
+      width: 100%;
+    }
+
     form {
       display: flex;
       flex-direction: column;
       align-items: center;
 
+      /* CSS */
       button {
-        border: none;
-        width: 100px;
-        padding: 10px;
-        border-radius: 99em;
-        &:hover {
-          background-color: mix(#fff, colors.$blueberry-blue, 50%);
-          transition: 200ms ease;
+        background-color: colors.$blueberry-blue;
+        border: 0 solid #e5e7eb;
+        box-sizing: border-box;
+        color: white;
+        display: flex;
+        font-family:
+          ui-sans-serif,
+          system-ui,
+          -apple-system,
+          system-ui,
+          'Segoe UI',
+          Roboto,
+          'Helvetica Neue',
+          Arial,
+          'Noto Sans',
+          sans-serif,
+          'Apple Color Emoji',
+          'Segoe UI Emoji',
+          'Segoe UI Symbol',
+          'Noto Color Emoji';
+        font-size: fontSizes.$font-size-rsvp-button-large;
+        font-weight: 700;
+        justify-content: center;
+        height: 50px;
+        line-height: 50px;
+
+        position: absolute;
+        bottom: 15%;
+        text-align: center;
+        text-decoration: none #000000 solid;
+        text-decoration-thickness: auto;
+        width: 100%;
+        max-width: 200px;
+
+        cursor: pointer;
+        transform: rotate(-2deg);
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        @include tablet {
+          font-size: fontSizes.$font-size-rsvp-button;
+          max-width: 150px;
+          @include mobile {
+            font-size: fontSizes.$font-size-rsvp-button-small;
+            max-width: 120px;
+            height: 40px;
+            line-height: 40px;
+          }
         }
-        color: colors.$blueberry-blue !important;
       }
-    }
 
-    .title {
-      margin-bottom: 20px;
-
-      h1 {
-        font-size: 18px;
-        margin-bottom: 10px;
+      button:focus {
+        outline: 0;
       }
-    }
 
-    background-color: rgba(colors.$beige, 0.3);
-    border: 30px solid rgba(colors.$blueberry-blue, 0.8);
-    padding: 20px 40px;
+      button:after {
+        content: '';
+        position: absolute;
+        border: 1px solid #000000;
+        bottom: 4px;
+        left: 4px;
+        width: calc(100% - 1px);
+        height: calc(100% - 1px);
+      }
+
+      button:hover:after {
+        bottom: 2px;
+        left: 2px;
+      }
+
+      // button {
+      //   border: none;
+      //   width: 100px;
+      //   padding: 10px;
+      //   border-radius: 99em;
+
+      //   background-color: mix(#fff, colors.$blueberry-blue, 70%);
+      //   &:hover {
+      //     background-color: mix(#fff, colors.$blueberry-blue, 30%);
+      //     transition: 200ms ease;
+      //   }
+      //   color: colors.$blueberry-blue !important;
+      // }
+    }
 
     .inputSection {
-      margin-bottom: 30px;
       display: flex;
       flex-direction: column;
       align-items: center;
       .inputLabel {
-        font-size: 14px;
+        font-size: fontSizes.$font-size-rsvp-paragraph-large;
+
         margin-bottom: 5px;
         font-weight: fontSizes.$font-weight-bold;
         cursor: default;
-      }
-      .radioButtonContainer {
-        display: flex;
-        justify-content: space-around;
-        width: 50%;
+        @include tablet {
+          font-size: fontSizes.$font-size-rsvp-paragraph;
 
-        .radioGroup {
-          display: flex;
-          cursor: pointer;
-          font-weight: 500;
-          position: relative;
-          overflow: hidden;
-          margin-bottom: 0.375em;
-          input {
-            position: absolute;
-            left: -9999px;
-            &:checked + span {
-              &:before {
-                box-shadow: inset 0 0 0 0.4375em colors.$blueberry-blue;
-              }
-            }
-          }
-          span {
-            display: flex;
-            align-items: center;
-            padding: 0.375em 0.75em 0.375em 0.375em;
-            border-radius: 99em; // or something higher...
-            transition: 0.25s ease;
-            &:hover {
-              background-color: mix(#fff, colors.$blueberry-blue, 50%);
-            }
-            &:before {
-              display: flex;
-              flex-shrink: 0;
-              content: '';
-              background-color: #fff;
-              width: 1.5em;
-              height: 1.5em;
-              border-radius: 50%;
-              margin-right: 0.375em;
-              transition: 0.25s ease;
-              box-shadow: inset 0 0 0 0.125em colors.$blueberry-blue;
-            }
+          @include mobile {
+            font-size: fontSizes.$font-size-rsvp-paragraph-small;
           }
         }
       }
 
       input {
-        font-family: 'nickainley';
         background-color: transparent;
         border: none;
         border-bottom: 1px solid #444;
@@ -112,14 +162,288 @@
         &:focus-visible {
           outline: none;
         }
-        width: 200px;
       }
 
       textarea {
         outline: none;
         resize: none;
-        width: 300px;
         height: 100px;
+        border-radius: 20px;
+        border: 1px solid colors.$blueberry-blue;
+        font-family: 'Quicksand', sans-serif;
+        width: 100%;
+        padding: 10px;
+        background-color: transparent;
+      }
+    }
+    .radioButtonContainer {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 30px;
+
+      .radioGroup {
+        display: flex;
+        cursor: pointer;
+        font-weight: 500;
+        position: relative;
+        overflow: hidden;
+        margin-bottom: 0.375em;
+        input {
+          z-index: -100;
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          &:checked + span {
+            &:before {
+              box-shadow: inset 0 0 0 0.4375em colors.$blueberry-blue;
+            }
+          }
+        }
+        span {
+          display: flex;
+          align-items: center;
+          padding: 0.375em 0.75em 0.375em 0.375em;
+          border-radius: 99em; // or something higher...
+          transition: 0.25s ease;
+          &:hover {
+            background-color: mix(#fff, colors.$blueberry-blue, 50%);
+          }
+          &:before {
+            display: flex;
+            flex-shrink: 0;
+            content: '';
+            background-color: #fff;
+            width: 1.5em;
+            height: 1.5em;
+            border-radius: 50%;
+            margin-right: 0.375em;
+            transition: 0.25s ease;
+            box-shadow: inset 0 0 0 0.125em colors.$blueberry-blue;
+          }
+        }
+      }
+    }
+  }
+
+  .accomodation-intro {
+    h1 {
+      font-size: fontSizes.$font-size-rsvp-header-large;
+      margin-bottom: 20px;
+    }
+    p {
+      font-size: fontSizes.$font-size-rsvp-paragraph-large;
+      margin-bottom: 10px;
+    }
+    .price-list {
+      margin-left: 20px;
+    }
+  }
+
+  .validation-tooltip {
+    background-color: aqua !important;
+  }
+
+  .step-4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    h1 {
+      font-size: fontSizes.$font-size-rsvp-paragraph-large;
+      text-align: center;
+
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-paragraph;
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-paragraph-small;
+        }
+      }
+    }
+    input {
+      background-color: transparent;
+      border: none;
+      border-bottom: 1px solid #444;
+      text-align: center;
+      &:focus-visible {
+        outline: none;
+      }
+    }
+    /* Chrome, Safari, Edge, Opera */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    /* Firefox */
+    input[type='number'] {
+      -moz-appearance: textfield;
+    }
+  }
+
+  .progress-container {
+    position: absolute;
+    bottom: 5%;
+    width: 100%;
+  }
+
+  .form-section {
+    padding-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .step-5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    .transportation-list {
+      margin-left: 20px;
+    }
+    p {
+      font-size: fontSizes.$font-size-rsvp-paragraph-large;
+      margin-bottom: 20px;
+
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-paragraph;
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-paragraph-small;
+        }
+      }
+    }
+  }
+
+  .step-1 {
+    text-align: center;
+    .title {
+      margin-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 50px;
+
+      h1 {
+        font-size: fontSizes.$font-size-rsvp-header-large;
+        margin-bottom: 10px;
+        @include tablet {
+          font-size: fontSizes.$font-size-rsvp-header;
+
+          @include mobile {
+            font-size: fontSizes.$font-size-rsvp-header-small;
+          }
+        }
+      }
+    }
+
+    .radioButtonContainer {
+      max-width: 200px;
+    }
+  }
+
+  input[type='text'],
+  input[type='number'] {
+    font-size: fontSizes.$font-size-rsvp-paragraph-large;
+
+    @include tablet {
+      font-size: fontSizes.$font-size-rsvp-paragraph;
+      @include mobile {
+        font-size: fontSizes.$font-size-rsvp-paragraph-small;
+      }
+    }
+  }
+
+  .step-4 {
+    h1 {
+      margin-bottom: 100px;
+    }
+  }
+
+  .step-2 {
+    width: 90%;
+    h1 {
+      margin-bottom: 100px;
+      font-size: fontSizes.$font-size-rsvp-paragraph-large;
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-paragraph;
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-paragraph-small;
+        }
+      }
+    }
+  }
+
+  .step-3 {
+    width: 90%;
+    .accomodation-intro {
+      p {
+        font-size: fontSizes.$font-size-rsvp-paragraph-large;
+        @include tablet {
+          font-size: fontSizes.$font-size-rsvp-paragraph;
+          @include mobile {
+            font-size: fontSizes.$font-size-rsvp-paragraph-small;
+          }
+        }
+      }
+    }
+  }
+
+  .step-6,
+  .step-7 {
+    width: 90%;
+    h1 {
+      margin-bottom: 50px;
+      font-size: fontSizes.$font-size-rsvp-header-large;
+
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-header;
+
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-header-small;
+        }
+      }
+    }
+    p {
+      font-family: 'nickainley';
+      font-size: fontSizes.$font-size-rsvp-header-large;
+
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-header;
+
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-header-small;
+        }
+      }
+    }
+  }
+
+  .submit-error-container {
+    font-family: 'Quicksand', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    h1 {
+      font-size: fontSizes.$font-size-rsvp-header-large;
+
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-header;
+
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-header-small;
+        }
+      }
+    }
+    p {
+      font-size: fontSizes.$font-size-rsvp-paragraph-large;
+
+      @include tablet {
+        font-size: fontSizes.$font-size-rsvp-paragraph;
+
+        @include mobile {
+          font-size: fontSizes.$font-size-rsvp-paragraph-small;
+        }
       }
     }
   }

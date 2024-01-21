@@ -7,14 +7,19 @@
     "faq": "FAQ"
   },
   "RSVP": {
+    "willAttend_title": "RSVP",
     "willAttend": "Will you join us for our Big day?",
+    "name": "Name:",
+    "replyBefore": "(Please, reply before April 30.)",
+    "foodAllergy_title": "Special meal requests",
     "foodAllergy": "Please let us know below about any food intolerance/allergy that we should consider?",
+    "foodAllergyPlaceholder": "Please, write here...",
     "accomodation_title": "Accomodation",
     "accomodation_intro": "At the dinner and party venue (Rosinante Country Inn, address:...) there will be a limited number of rooms available to book on a first come first serve basis.",
     "accomodation_prices": "Prices are as follows (breakfast included):",
-    "accomodation_prices_adults": "Adults: 17.000 HUF/person/night",
-    "accomodation_prices_kids": "Kids between the ages of 4 - 10: 7.000 HUF/person/night",
-    "accomodation_prices_kids_small": "Kids below 4 are free of charge",
+    "accomodation_prices_adults": "Adults: <bold>17.000 HUF/person/night</bold>",
+    "accomodation_prices_kids": "Kids between the ages of 4 - 10: <bold>7.000 HUF/person/night</bold>",
+    "accomodation_prices_kids_small": "Kids below 4 are <bold>free of charge</bold>",
     "accomodation_alternatives": "In case all rooms have been booked at the venue, we can help you find alternative accomodation.",
     "accomodation_yes": "I would like accommodation",
     "accomodation_no": "I don’t need accomodation",
@@ -32,6 +37,14 @@
     "yes": "Yes",
     "no": "No",
     "other": "Other (please, provide details)",
-    "sorry_cannot_attend": "We are sorry you can’t make it! Thank you for your confirmation!"
+    "sorry_cannot_attend": "We are sorry you can’t make it! Thank you for your confirmation!",
+    "next": "Next",
+    "rsvpValidation": {
+      "name": "Please, enter your name",
+      "selectOption": "Please, select an option",
+      "numberOfGuests": "Please, add the number of guests that need accomodation"
+    },
+    "submit_error_title": "Oops, something went wrong... :(",
+    "submit_error_detail": "Please, refresh the page and try again."
   }
 }

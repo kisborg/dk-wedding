@@ -17,7 +17,7 @@ export default function Home() {
     from: { opacity: 0 },
     enter: { opacity: 1 },
     leave: { opacity: 0 },
-    config: { tension: 400, friction: 120 },
+    config: { tension: 600, friction: 120 },
   });
   return (
     <main className='main'>

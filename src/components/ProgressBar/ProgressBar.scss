@@ -1,0 +1,104 @@
+@use '../../app/styles/colors' as colors;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
+$body-font: 'Poppins', 'Helvetica', 'sans-serif';
+$headers-font: 'Poppins', 'Helvetica', 'sans-serif';
+
+// PADDING
+$padding-width--heavy: 0px 25px;
+$padding-width--mobile: 0px 10px;
+
+// COLORS
+$light-gray: #f4f4f4;
+$primary-red: #ed1e28;
+$primary-red--20: rgba(237, 30, 40, 0.2);
+$secondary-red: #fe6d62;
+$secondary-blue: #91b3fa;
+$secondary-blue--40: rgba(145, 179, 250, 0.4);
+$accent-gray: #eeeaeb;
+$canvas: #ffffff;
+
+.progress-bar {
+  background-color: $secondary-blue--40;
+  border: 3px $light-gray solid;
+  border-radius: 20px;
+  position: relative;
+  margin: 4px 0 16px 0;
+  height: 30px;
+  width: 100%;
+
+  .completed-bar {
+    background: linear-gradient(
+      to left,
+      colors.$blueberry-blue,
+      colors.$light-blue
+    );
+    box-shadow:
+      rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px,
+      rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px,
+      rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    border-radius: 20px;
+    color: $light-gray;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 0;
+    opacity: 0;
+    transition: width 2s ease 0.4s;
+    padding: 0 8px;
+    &__dashed {
+      width: 96%;
+      border: 1px dashed $canvas;
+    }
+    &.truck {
+      font-size: 1.5rem;
+      margin-left: 4px;
+    }
+  }
+}
+
+.icon {
+  &-cloud {
+    height: 50px;
+    width: 50px;
+  }
+
+  &-lamp {
+    height: 70px;
+    width: 60px;
+  }
+
+  &-tree--one {
+    height: 60px;
+    width: 60px;
+  }
+
+  &-tree--two {
+    height: 70px;
+    width: 60px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  .progress-container {
+    padding: $padding-width--mobile;
+  }
+
+  .progress-bar {
+    margin-bottom: 4px;
+    .completed-bar {
+      &__dashed {
+        width: 96%;
+        border: 1px dashed $canvas;
+      }
+
+      &__truck {
+        font-size: 1rem;
+        margin-left: 0;
+      }
+    }
+  }
+}

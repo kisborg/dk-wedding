@@ -5,7 +5,7 @@
 #navbar {
   display: flex;
   justify-content: space-between;
-  height: 70px;
+  height: 50px;
   width: 100%;
   z-index: 11111;
   color: colors.$blueberry-blue;
@@ -18,7 +18,7 @@
   }
 
   .nav-menu-item {
-    line-height: 70px;
+    line-height: 50px;
     font-size: fontSizes.$font-size-navbar;
     font-weight: fontSizes.$font-weight-bold;
     vertical-align: center;
@@ -38,7 +38,7 @@
       letter-spacing 500ms;
 
     @include tablet {
-      font-size: 14px;
+      font-size: 16px;
     }
   }
 }

@@ -3,24 +3,30 @@ import { firestore } from '../utils/firebaseConfig';
 
 export type RSVPFormData = {
   name: string | undefined;
-  specialRequest: string | undefined;
-  needAccomodation: boolean | undefined;
-  email: string | undefined;
+  willAttend: string | undefined;
+  mealRequest: string | undefined;
+  needAccomodation: string | undefined;
+  accomodationGuestNumber: number | undefined;
+  needTransportation: string | undefined;
 };
 
 export const sendRSVPForm = async ({
   name,
-  specialRequest,
+  willAttend,
+  mealRequest,
   needAccomodation,
-  email,
+  accomodationGuestNumber,
+  needTransportation,
 }: RSVPFormData) => {
   try {
     const ref = collection(firestore, 'rsvp');
     await addDoc(ref, {
       name,
-      email,
-      specialRequest,
+      willAttend,
+      mealRequest,
       needAccomodation,
+      accomodationGuestNumber,
+      needTransportation,
       sentAt: Timestamp.now().toDate(),
     });
     return 0;

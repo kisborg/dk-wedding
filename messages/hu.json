@@ -7,14 +7,19 @@
     "faq": "GYÍK"
   },
   "RSVP": {
+    "willAttend_title": "RSVP",
     "willAttend": "Ott leszel/lesztek velünk a nagy napunkon?",
+    "name": "Név:",
+    "replyBefore": "(Kérlek válaszolj április 30-ig.)",
+    "foodAllergy_title": "Étel/ital érzékenység",
     "foodAllergy": "Kérlek jelezd alább, amennyiben fennáll bármilyen étellel kapcsolatos érzékenység/allergia, amiről fontos, hogy tudjunk.",
+    "foodAllergyPlaceholder": "Kérlek ide írj...",
     "accomodation_title": "Szállás",
     "accomodation_intro": "A vacsora és buli helyszínén (Rosinante Fogadó, cím: …) szálláshely foglalható limitált fő részére jelentkezési sorrend szerint.",
     "accomodation_prices": "A szállás ára (reggelivel):",
-    "accomodation_prices_adults": "Felnőtteknek: 17.000 Ft/fő/éj",
-    "accomodation_prices_kids": "4-10 éves kor között: 7000 Ft/fő/éj",
-    "accomodation_prices_kids_small": "4 éves kor alatt ingyenes",
+    "accomodation_prices_adults": "Felnőtteknek: <bold>17.000 Ft/fő/éj</bold>",
+    "accomodation_prices_kids": "4-10 éves kor között: <bold>7000 Ft/fő/éj</bold>",
+    "accomodation_prices_kids_small": "4 éves kor alatt <bold>ingyenes</bold>",
     "accomodation_alternatives": "Ha ezek a szobák beteltek, akkor tudunk segíteni további szálláshely szervezésében.",
     "accomodation_yes": "Kérek szállást",
     "accomodation_no": "Nem kérek szállást",
@@ -32,6 +37,14 @@
     "yes": "Igen",
     "no": "Nem",
     "other": "Egyéb (kérlek add meg a részleteket)",
-    "sorry_cannot_attend": "Sajnáljuk, hogy nem tudsz/tudtok részt venni. Köszönjük szépen a visszajelzést!"
+    "sorry_cannot_attend": "Sajnáljuk, hogy nem tudsz/tudtok részt venni. Köszönjük szépen a visszajelzést!",
+    "next": "Tovább",
+    "rsvpValidation": {
+      "name": "Kérlek add meg a neved",
+      "selectOption": "Kérlek válassz a lehetséges válaszok közül",
+      "numberOfGuests": "Kérlek add meg, hogy hány főre ígényelsz szállást"
+    },
+    "submit_error_title": "Hiba történt... :(",
+    "submit_error_detail": "Kérlek frissitsd az oldalt és próbáld meg újra."
   }
 }

@@ -1,5 +1,5 @@
 import './Schedule.scss';
-import ScheduleImage from '../../assets/schedule.png';
+import ScheduleImage from '../../../public/images/schedule.png';
 import Image from 'next/image';
 
 const Schedule = () => {
