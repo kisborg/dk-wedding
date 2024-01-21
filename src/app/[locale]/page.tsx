@@ -32,51 +32,51 @@ export default function Home() {
         <div id='page-container'>
           {transition((style, page) => {
             switch (page) {
-              case 'intro':
-                return (
-                  <animated.div className={'page'} style={style}>
-                    <Section sectionId='intro'>
-                      <Intro />
-                    </Section>
-                  </animated.div>
-                );
-              case 'about-us':
-                return (
-                  <animated.div className={'page'} style={style}>
-                    <Section sectionId='about-us'>
-                      <AboutUs />
-                    </Section>
-                  </animated.div>
-                );
-              case 'schedule':
-                return (
-                  <animated.div className={'page'} style={style}>
-                    <Section sectionId='schedule'>
-                      <Schedule />
-                    </Section>
-                  </animated.div>
-                );
-              case 'rsvp':
+              // case 'intro':
+              //   return (
+              //     <animated.div className={'page'} style={style}>
+              //       <Section sectionId='intro'>
+              //         <Intro />
+              //       </Section>
+              //     </animated.div>
+              //   );
+              // case 'about-us':
+              //   return (
+              //     <animated.div className={'page'} style={style}>
+              //       <Section sectionId='about-us'>
+              //         <AboutUs />
+              //       </Section>
+              //     </animated.div>
+              //   );
+              // case 'schedule':
+              //   return (
+              //     <animated.div className={'page'} style={style}>
+              //       <Section sectionId='schedule'>
+              //         <Schedule />
+              //       </Section>
+              //     </animated.div>
+              //   );
+              // case 'rsvp':
+              //   return (
+              //     <animated.div className={'page'} style={style}>
+              //       <Section sectionId='rsvp'>
+              //         <RSVP />
+              //       </Section>
+              //     </animated.div>
+              //   );
+              // case 'faq':
+              //   return (
+              //     <animated.div className={'page'} style={style}>
+              //       <Section sectionId='faq'>
+              //         <FAQ />
+              //       </Section>
+              //     </animated.div>
+              //   );
+              default:
                 return (
                   <animated.div className={'page'} style={style}>
                     <Section sectionId='rsvp'>
                       <RSVP />
-                    </Section>
-                  </animated.div>
-                );
-              case 'faq':
-                return (
-                  <animated.div className={'page'} style={style}>
-                    <Section sectionId='faq'>
-                      <FAQ />
-                    </Section>
-                  </animated.div>
-                );
-              default:
-                return (
-                  <animated.div className={'page'} style={style}>
-                    <Section sectionId='intro'>
-                      <Intro />
                     </Section>
                   </animated.div>
                 );

@@ -49,7 +49,7 @@ const Navbar = ({ onNavigation }: NavigationProps) => {
       <div className='language-switcher'>
         <LanguageSwitcher />
       </div>
-      <div className='nav-menu-item'>
+      {/* <div className='nav-menu-item'>
         <a onClick={() => onNavigation('intro')}>{t('home')}</a>
       </div>
       <div className='nav-menu-item'>
@@ -63,7 +63,7 @@ const Navbar = ({ onNavigation }: NavigationProps) => {
       </div>
       <div className='nav-menu-item'>
         <a onClick={() => onNavigation('faq')}>{t('faq')}</a>
-      </div>
+      </div> */}
     </nav>
   );
 };

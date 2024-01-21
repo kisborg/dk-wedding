@@ -23,10 +23,16 @@
     center,
     -50px;
   font-family: 'Quicksand', sans-serif;
+  position: relative;
 
   &::-webkit-scrollbar {
     width: 0;
     display: none;
+  }
+
+  .logo-container {
+    position: absolute;
+    top: 20px;
   }
   .formContainer {
     padding-top: 20px;
@@ -288,7 +294,7 @@
   }
 
   .form-section {
-    padding-bottom: 30px;
+    padding-bottom: 40px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -317,6 +323,7 @@
 
   .step-1 {
     text-align: center;
+    width: 90%;
     .title {
       margin-bottom: 20px;
       display: flex;

@@ -6,6 +6,7 @@ import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 import { Tooltip } from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
+import Logo from '../Logo/Logo';
 
 const tooltipTheme = createTheme({
   components: {
@@ -193,6 +194,9 @@ const RSVP = () => {
   };
   return (
     <div className='rsvp'>
+      <div className='logo-container'>
+        <Logo />
+      </div>
       {!formSubmitFailed && (
         <ThemeProvider theme={tooltipTheme}>
           <div className='formContainer'>
