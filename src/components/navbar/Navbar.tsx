@@ -1,18 +1,17 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
 'use client';
 import { useEffect, useRef } from 'react';
 import './navbar.scss';
-import { Page } from '@/app/[locale]/page';
-import { useTranslations } from 'next-intl';
+// import { Page } from '@/app/[locale]/page';
+// import { useTranslations } from 'next-intl';
 import LanguageSwitcher from './language-switcher/LanguageSwitcher';
 
-interface NavigationProps {
-  onNavigation: (page: Page) => void;
-}
+// interface NavigationProps {
+//   onNavigation: (page: Page) => void;
+// }
 
-const Navbar = ({ onNavigation }: NavigationProps) => {
+const Navbar = () => {
   const navbarRef = useRef<HTMLElement>(null);
-  const t = useTranslations('Navbar');
+  // const t = useTranslations('Navbar');
   useEffect(() => {
     if (navbarRef.current) {
       const navbar = navbarRef.current;
