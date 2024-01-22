@@ -1,3 +1,4 @@
+@use '../../../app/styles/colors' as colors;
 .button {
   display: flex;
   height: 100%;
@@ -11,9 +12,9 @@
   padding-left: 1rem;
   padding-right: 1rem;
   font-size: 1rem;
-  font-family: 'nickainley';
+  font-family: 'cursive';
   line-height: 1.5rem;
-  color: hsl(204 10% 10%);
+  color: colors.$blueberry-blue;
   text-decoration-line: none;
   outline-width: 2px;
   outline-offset: 2px;
@@ -125,6 +126,7 @@
   border-radius: 0.25rem;
   padding: 0.5rem;
   outline: none !important;
+  font-family: 'cursive';
 }
 
 .menu-item[aria-disabled='true'] {

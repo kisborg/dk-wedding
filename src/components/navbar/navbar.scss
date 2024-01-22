@@ -5,12 +5,12 @@
 #navbar {
   display: flex;
   justify-content: space-between;
-  height: 50px;
+  height: 30px;
   width: 100%;
   z-index: 11111;
   color: colors.$blueberry-blue;
-  box-shadow: 0 0 2px 0;
-
+  position: absolute;
+  top: 0;
   transition: 200ms ease;
 
   &.hidden {
