@@ -85,6 +85,11 @@ body {
   font-family: 'Sacramento', cursive;
   max-width: 100vw;
   overflow: hidden;
+
+  //for rsvp
+  @media (max-width: 456px) {
+    overflow: scroll;
+  }
 }
 
 body {
