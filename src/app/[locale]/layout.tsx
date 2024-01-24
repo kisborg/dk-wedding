@@ -1,16 +1,10 @@
 import type { Metadata } from 'next';
 import '../styles/globals.scss';
 import { NextIntlClientProvider, useMessages } from 'next-intl';
-import localFont from 'next/font/local';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 config.autoAddCss = false;
-
-const nickainley = localFont({
-  src: '../fonts/Nickainley-Normal.woff',
-  display: 'swap',
-});
 
 export const metadata: Metadata = {
   title: 'Kriszti & Dani',
@@ -27,7 +21,7 @@ export default function RootLayout({
   const messages = useMessages();
   return (
     <html lang={locale}>
-      <body className={nickainley.className}>
+      <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppRouterCacheProvider>{children}</AppRouterCacheProvider>
         </NextIntlClientProvider>
