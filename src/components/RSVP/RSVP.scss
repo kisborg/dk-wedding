@@ -177,6 +177,7 @@
       }
 
       textarea {
+        font-size: 16px;
         outline: none;
         resize: none;
         height: 100px;
@@ -259,7 +260,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
     h1 {
       font-size: fontSizes.$font-size-rsvp-paragraph-large;
       text-align: center;
@@ -304,13 +304,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    @include mobile {
+      width: 90%;
+    }
   }
 
   .step-5 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
 
     .transportation-list {
       margin-left: 20px;
@@ -330,7 +333,7 @@
 
   .step-1 {
     text-align: center;
-    width: 90%;
+
     .title {
       margin-bottom: 20px;
       display: flex;
@@ -375,7 +378,6 @@
   }
 
   .step-2 {
-    width: 90%;
     h1 {
       margin-bottom: 100px;
       font-size: fontSizes.$font-size-rsvp-paragraph-large;
@@ -389,7 +391,6 @@
   }
 
   .step-3 {
-    width: 90%;
     .accomodation-intro {
       p {
         margin-bottom: 20px;
@@ -406,7 +407,6 @@
 
   .step-6,
   .step-7 {
-    width: 90%;
     h1 {
       margin-bottom: 50px;
       font-size: fontSizes.$font-size-rsvp-header-large;
@@ -438,7 +438,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 90%;
+
     h1 {
       font-size: fontSizes.$font-size-rsvp-header-large;
 
