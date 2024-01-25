@@ -51,7 +51,7 @@ $canvas: #ffffff;
     padding: 0 8px;
     &__dashed {
       width: 96%;
-      border: 1px dashed $canvas;
+      border: 1px solid $canvas;
     }
     &.truck {
       font-size: 1.5rem;
@@ -92,7 +92,7 @@ $canvas: #ffffff;
     .completed-bar {
       &__dashed {
         width: 96%;
-        border: 1px dashed $canvas;
+        border: 1px solid $canvas;
       }
 
       &__truck {

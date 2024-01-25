@@ -196,6 +196,7 @@
         position: relative;
         overflow: hidden;
         margin-bottom: 0.375em;
+
         input {
           z-index: -100;
           position: absolute;
@@ -325,6 +326,7 @@
 
   .step-1 {
     text-align: center;
+    padding-bottom: 0px;
 
     .title {
       margin-bottom: 20px;
@@ -347,7 +349,28 @@
     }
 
     .radioButtonContainer {
-      max-width: 200px;
+      max-width: 300px;
+      margin-bottom: 10px;
+    }
+    .other-input-container {
+      height: 70px;
+      width: 80%;
+      @include mobile {
+        width: 100%;
+      }
+      textarea {
+        font-size: 16px;
+        outline: none;
+        resize: none;
+        height: 70px;
+        border-radius: 20px;
+        border: 1px solid colors.$blueberry-blue;
+        font-family: 'Quicksand', sans-serif;
+        width: 100%;
+        max-width: 300px;
+        padding: 10px;
+        background-color: transparent;
+      }
     }
   }
 
@@ -383,6 +406,7 @@
   }
 
   .step-3 {
+    padding-bottom: 20px;
     .accomodation-intro {
       p {
         margin-bottom: 20px;
@@ -394,6 +418,19 @@
           }
         }
       }
+
+      li {
+        margin-bottom: 10px;
+      }
+    }
+    .radioButtonContainer {
+      margin-top: 10px;
+      flex-wrap: wrap;
+
+      .radioGroup {
+        width: 100%;
+        margin-bottom: 0px;
+      }
     }
   }
 
@@ -402,6 +439,7 @@
     h1 {
       margin-bottom: 50px;
       font-size: fontSizes.$font-size-rsvp-header-large;
+      text-align: center;
 
       @include tablet {
         font-size: fontSizes.$font-size-rsvp-header;

@@ -3,10 +3,11 @@ import { firestore } from '../utils/firebaseConfig';
 
 export type RSVPFormData = {
   name: string | undefined;
-  willAttend: string | undefined;
+  willAttend: 'Yes' | 'No' | 'Other' | undefined;
+  willAttendDetails: string | undefined;
   mealRequest: string | undefined;
-  needAccomodation: string | undefined;
-  accomodationGuestNumber: number | undefined;
+  needAccomodation: 'Yes' | 'No' | 'DontKnowYet' | undefined;
+  accomodationGuestNumber: number;
   needTransportation: string | undefined;
 };
 

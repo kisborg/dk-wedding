@@ -3,8 +3,16 @@ import './RSVP.scss';
 import { RSVPFormData, sendRSVPForm } from '@/app/[locale]/sendRSVPForm';
 import { ProgressBar } from '../ProgressBar/ProgressBar';
 import { useTranslations } from 'next-intl';
-import { AnimatePresence, motion, stagger } from 'framer-motion';
-import { Tooltip } from '@mui/material';
+import { AnimatePresence, motion } from 'framer-motion';
+import {
+  Tooltip,
+  Select,
+  MenuItem,
+  SelectChangeEvent,
+  InputLabel,
+  Box,
+  FormControl,
+} from '@mui/material';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import Logo from '../Logo/Logo';
 
@@ -22,15 +30,17 @@ const tooltipTheme = createTheme({
     },
   },
 });
+
 const RSVP = () => {
   const t = useTranslations('RSVP');
   const formRef = useRef<HTMLFormElement>(null);
   const emptyFormData = {
     name: '',
     willAttend: undefined,
-    mealRequest: '',
+    willAttendDetails: undefined,
+    mealRequest: undefined,
     needAccomodation: undefined,
-    accomodationGuestNumber: undefined,
+    accomodationGuestNumber: 1,
     needTransportation: undefined,
   };
 
@@ -59,7 +69,14 @@ const RSVP = () => {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (e.target.checked) {
-      setFormData({ ...formData, needAccomodation: e.target.value });
+      setFormData({
+        ...formData,
+        needAccomodation: e.target.value as
+          | 'Yes'
+          | 'No'
+          | 'DontKnowYet'
+          | undefined,
+      });
     }
   };
 
@@ -67,8 +84,17 @@ const RSVP = () => {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (e.target.checked) {
-      setFormData({ ...formData, willAttend: e.target.value });
+      setFormData({
+        ...formData,
+        willAttend: e.target.value as 'Yes' | 'No' | 'Other' | undefined,
+      });
     }
+  };
+
+  const handleWillAttendDetailsChange = (
+    e: React.ChangeEvent<HTMLTextAreaElement>
+  ) => {
+    setFormData({ ...formData, willAttendDetails: e.target.value });
   };
 
   const handletransportationRadioButtonChange = (
@@ -80,11 +106,12 @@ const RSVP = () => {
   };
 
   const handleAccomodationGuestNumberChange = (
-    e: React.ChangeEvent<HTMLInputElement>
+    e: SelectChangeEvent<number>
   ) => {
+    console.log(e.target.value);
     setFormData({
       ...formData,
-      accomodationGuestNumber: parseFloat(e.target.value),
+      accomodationGuestNumber: e.target.value as number,
     });
   };
 
@@ -92,6 +119,12 @@ const RSVP = () => {
     switch (currentStep) {
       case 1:
         if (!formData.name || !formData.willAttend) {
+          setHasValidationError(true);
+          return false;
+        } else if (
+          formData.willAttend === 'Other' &&
+          !formData.willAttendDetails
+        ) {
           setHasValidationError(true);
           return false;
         } else {
@@ -116,6 +149,7 @@ const RSVP = () => {
           setHasValidationError(false);
           setCurrentStep(4);
         } else {
+          formData.accomodationGuestNumber = 0;
           setHasValidationError(false);
           setCurrentStep(5);
         }
@@ -148,6 +182,7 @@ const RSVP = () => {
       await sendRSVPForm({
         name: formData.name,
         willAttend: formData.willAttend,
+        willAttendDetails: formData.willAttendDetails,
         mealRequest: formData.mealRequest,
         needAccomodation: formData.needAccomodation,
         accomodationGuestNumber: formData.accomodationGuestNumber,
@@ -173,6 +208,7 @@ const RSVP = () => {
         await sendRSVPForm({
           name: formData.name,
           willAttend: formData.willAttend,
+          willAttendDetails: formData.willAttendDetails,
           mealRequest: formData.mealRequest,
           needAccomodation: formData.needAccomodation,
           accomodationGuestNumber: formData.accomodationGuestNumber,
@@ -268,8 +304,48 @@ const RSVP = () => {
                             ></input>
                             <span>{t('no')}</span>
                           </label>
+
+                          <label className='radioGroup other'>
+                            <input
+                              autoComplete='off'
+                              name='willAttend'
+                              type='radio'
+                              value='Other'
+                              onChange={handleWillAttendRadioButtonChange}
+                            ></input>
+                            <span>{t('other')}</span>
+                          </label>
                         </div>
                       </Tooltip>
+                      <div className='other-input-container'>
+                        <AnimatePresence>
+                          {formData.willAttend === 'Other' && (
+                            <motion.div
+                              key='willAtthendDetails'
+                              animate={{ scale: 1 }}
+                              initial={{ scale: 0 }}
+                              exit={{ scale: 0 }}
+                            >
+                              <Tooltip
+                                open={
+                                  !formData.willAttendDetails &&
+                                  hasValidationError
+                                }
+                                arrow
+                                title={t('rsvpValidation.willAttendDetails')}
+                              >
+                                <textarea
+                                  id='willAttendOther'
+                                  placeholder={t('other_detail')}
+                                  value={formData.willAttendDetails}
+                                  onChange={handleWillAttendDetailsChange}
+                                  required
+                                ></textarea>
+                              </Tooltip>
+                            </motion.div>
+                          )}
+                        </AnimatePresence>
+                      </div>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -377,6 +453,16 @@ const RSVP = () => {
                               ></input>
                               <span>{t('accomodation_no')}</span>
                             </label>
+                            <label className='radioGroup'>
+                              <input
+                                autoComplete='off'
+                                name='accomodation'
+                                type='radio'
+                                value='DontKnowYet'
+                                onChange={handleAccomodationRadioButtonChange}
+                              ></input>
+                              <span>{t('accomodation_unknown')}</span>
+                            </label>
                           </div>
                         </Tooltip>
                       </div>
@@ -405,22 +491,88 @@ const RSVP = () => {
                       <h1 className='section-title'>
                         {t('accomodation_num_of_guests')}
                       </h1>
-                      <Tooltip
-                        open={
-                          !formData.accomodationGuestNumber &&
-                          hasValidationError
-                        }
-                        arrow
-                        title={t('rsvpValidation.numberOfGuests')}
-                      >
-                        <input
-                          onFocus={() => setHasValidationError(false)}
-                          type='number'
-                          value={formData.accomodationGuestNumber}
-                          onChange={handleAccomodationGuestNumberChange}
-                          required
-                        />
-                      </Tooltip>
+                      <Box minWidth={'200px'}>
+                        <FormControl fullWidth variant='standard'>
+                          <InputLabel
+                            sx={{
+                              color: '#163151 !important',
+                              fontWeight: '600',
+                            }}
+                            id='guest-number-label'
+                          >
+                            {t('guest_number_label')}
+                          </InputLabel>
+                          <Select
+                            labelId='guest-number-label'
+                            value={formData.accomodationGuestNumber}
+                            label={t('guest_number_label')}
+                            onChange={handleAccomodationGuestNumberChange}
+                            disableUnderline
+                            sx={{
+                              color: '#163151',
+                              fontWeight: '600',
+                              textAlign: 'center',
+                              '& .MuiSelect-icon': { color: '#163151' },
+                              '& :focus': {
+                                borderBottom: '0px solid #163151',
+                                backgroundColor: 'transparent',
+                              },
+                              borderBottom: '1px solid #163151',
+                            }}
+                          >
+                            <MenuItem
+                              sx={{
+                                justifyContent: 'center',
+                                color: '#163151',
+                                fontWeight: '600',
+                              }}
+                              value={1}
+                            >
+                              1
+                            </MenuItem>
+                            <MenuItem
+                              sx={{
+                                justifyContent: 'center',
+                                color: '#163151',
+                                fontWeight: '600',
+                              }}
+                              value={2}
+                            >
+                              2
+                            </MenuItem>
+                            <MenuItem
+                              sx={{
+                                justifyContent: 'center',
+                                color: '#163151',
+                                fontWeight: '600',
+                              }}
+                              value={3}
+                            >
+                              3
+                            </MenuItem>
+                            <MenuItem
+                              sx={{
+                                justifyContent: 'center',
+                                color: '#163151',
+                                fontWeight: '600',
+                              }}
+                              value={4}
+                            >
+                              4
+                            </MenuItem>
+                            <MenuItem
+                              sx={{
+                                justifyContent: 'center',
+                                color: '#163151',
+                                fontWeight: '600',
+                              }}
+                              value={5}
+                            >
+                              5
+                            </MenuItem>
+                          </Select>
+                        </FormControl>
+                      </Box>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -467,21 +619,21 @@ const RSVP = () => {
                               autoComplete='off'
                               name='transportation'
                               type='radio'
-                              value='no'
+                              value='yes'
                               onChange={handletransportationRadioButtonChange}
+                              required
                             ></input>
-                            <span>{t('transportation_no')}</span>
+                            <span>{t('transportation_yes')}</span>
                           </label>
                           <label className='radioGroup'>
                             <input
                               autoComplete='off'
                               name='transportation'
                               type='radio'
-                              value='yes'
+                              value='no'
                               onChange={handletransportationRadioButtonChange}
-                              required
                             ></input>
-                            <span>{t('transportation_yes')}</span>
+                            <span>{t('transportation_no')}</span>
                           </label>
                         </div>
                       </Tooltip>
@@ -501,7 +653,9 @@ const RSVP = () => {
                     </button>
                   </motion.div>
                 )}
-                {currentStep === 5 && <button type='submit'>RSVP</button>}
+                {currentStep === 5 && (
+                  <button type='submit'>{t('send')}</button>
+                )}
               </form>
             )}
 
