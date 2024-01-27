@@ -101,7 +101,7 @@ const RSVP = () => {
     e: React.ChangeEvent<HTMLInputElement>
   ) => {
     if (e.target.checked) {
-      setFormData({ ...formData, needTransportation: e.target.value });
+      setFormData({ ...formData, needTransportation: e.target.value as 'Yes' | 'No' | undefined });
     }
   };
 
