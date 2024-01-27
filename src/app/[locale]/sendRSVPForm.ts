@@ -14,6 +14,7 @@ export type RSVPFormData = {
 export const sendRSVPForm = async ({
   name,
   willAttend,
+  willAttendDetails,
   mealRequest,
   needAccomodation,
   accomodationGuestNumber,
@@ -24,6 +25,7 @@ export const sendRSVPForm = async ({
     await addDoc(ref, {
       name,
       willAttend,
+      willAttendDetails,
       mealRequest,
       needAccomodation,
       accomodationGuestNumber,
