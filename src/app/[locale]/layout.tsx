@@ -8,6 +8,7 @@ import { getMessages } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
 
 import SessionProvider from './SessionProvider';
+import { authOptions } from '../api/auth/[...nextauth]/options';
 config.autoAddCss = false;
 
 export const metadata: Metadata = {
@@ -23,7 +24,7 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
   const messages = await getMessages();
-  const session = await getServerSession();
+  const session = await getServerSession(authOptions);
   return (
     <html lang={locale}>
       <body>
