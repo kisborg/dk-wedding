@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 import '../styles/globals.scss';
-import { NextIntlClientProvider, useMessages } from 'next-intl';
+import { NextIntlClientProvider } from 'next-intl';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
 import { getMessages } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
-import { authOptions } from '../api/auth/[...nextauth]/route';
+
 import SessionProvider from './SessionProvider';
 config.autoAddCss = false;
 
@@ -23,7 +23,7 @@ export default async function RootLayout({
   params: { locale: string };
 }) {
   const messages = await getMessages();
-  const session = await getServerSession(authOptions);
+  const session = await getServerSession();
   return (
     <html lang={locale}>
       <body>
