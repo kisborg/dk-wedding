@@ -111,7 +111,7 @@ const DataTable = () => {
             <MenuItem value="all">all</MenuItem>
             <MenuItem value="Yes">yes</MenuItem>
             <MenuItem value="No">no</MenuItem>
-            <MenuItem value="DontKnowYet">Don't know</MenuItem>
+            <MenuItem value="DontKnowYet">Don&apos;t know</MenuItem>
           </Select>
         </div>
         <div className='filter'>
