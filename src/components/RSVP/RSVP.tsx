@@ -619,7 +619,7 @@ const RSVP = () => {
                               autoComplete='off'
                               name='transportation'
                               type='radio'
-                              value='yes'
+                              value='Yes'
                               onChange={handletransportationRadioButtonChange}
                               required
                             ></input>
@@ -630,7 +630,7 @@ const RSVP = () => {
                               autoComplete='off'
                               name='transportation'
                               type='radio'
-                              value='no'
+                              value='No'
                               onChange={handletransportationRadioButtonChange}
                             ></input>
                             <span>{t('transportation_no')}</span>

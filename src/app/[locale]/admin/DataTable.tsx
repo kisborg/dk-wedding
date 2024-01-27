@@ -6,7 +6,7 @@ import { collection, getDoc, getDocs } from 'firebase/firestore/lite';
 import { firestore } from '@/app/utils/firebaseConfig';
 
 type FilterType = 'willAttend' | 'needAccomodation' | 'needTransportation';
-type FormValues = 'Yes' | 'No' | 'Other'
+type FormValues = 'Yes' | 'No' | 'Other' | 'DontKnowYet';
 type FilterValues = 'all' | FormValues;
 type Filter = {
   filter: FilterType;
@@ -18,6 +18,8 @@ type Filter = {
 const DataTable = () => {
   const [records, setRecords] = useState<{id: string, data: RSVPFormData}[]>([]);
   const [willAttendFilter, setWillAttendFilter] = useState<FilterValues>('all');
+  const [needAccomodationFilter, setNeedAccomodationFilter] = useState<FilterValues>('all');
+  const [needTransportationFilter, setNeedTransportationFilter] = useState<FilterValues>('all');
   const [filteredRecords, setFilteredRecords] = useState<{id: string, data: RSVPFormData}[]>([]);
   const [filters, setFilters] = useState<Filter[]>([{filter: 'willAttend', isActive: false, value: 'all'}, {filter: 'needAccomodation', isActive: false, value: 'all'}, {filter: 'needTransportation', isActive: false, value: 'all'}])
   useEffect(() => {
@@ -33,7 +35,6 @@ const DataTable = () => {
         }
         docs.push(record);
       })
-      console.log(docs);
       setRecords(docs);
       setFilteredRecords(docs);
       
@@ -69,18 +70,57 @@ const DataTable = () => {
     });
     setFilters(newFilterlist);
   }
+
+  const filterNeedAccomodationChange = (e: SelectChangeEvent<string>) => {
+    setNeedAccomodationFilter(e.target.value as FilterValues)
+    const newFilterlist = filters.filter(f => f.filter !== 'needAccomodation')
+    newFilterlist.push({
+      filter: 'needAccomodation',
+      isActive: e.target.value !== 'all',
+      value: e.target.value as FilterValues,
+    });
+    setFilters(newFilterlist);
+  }
+
+  const filterNeedTransportationChange = (e: SelectChangeEvent<string>) => {
+    setNeedTransportationFilter(e.target.value as FilterValues)
+    const newFilterlist = filters.filter(f => f.filter !== 'needTransportation')
+    newFilterlist.push({
+      filter: 'needTransportation',
+      isActive: e.target.value !== 'all',
+      value: e.target.value as FilterValues,
+    });
+    setFilters(newFilterlist);
+  }
   
   return (
     <div className='data-container'>
       <div className='filters'>
-        <div className='willAttend-filter'>
+        <div className='filter'>
           <p>Will attend?</p>
-        <Select label={"Will attend?"} defaultValue={"all"} value={willAttendFilter} onChange={filterWillAttendChange}>
-          <MenuItem value="all">all</MenuItem>
-          <MenuItem value="Yes">yes</MenuItem>
-          <MenuItem value="No">no</MenuItem>
-          <MenuItem value="Other">other</MenuItem>
-        </Select>
+          <Select defaultValue={"all"} value={willAttendFilter} onChange={filterWillAttendChange} sx={{width: '150px', height: '30px'}}>
+            <MenuItem value="all">all</MenuItem>
+            <MenuItem value="Yes">yes</MenuItem>
+            <MenuItem value="No">no</MenuItem>
+            <MenuItem value="Other">other</MenuItem>
+          </Select>
+        </div>
+        <div className='filter'>
+          <p>Need accomodation</p>
+          <Select defaultValue={"all"} value={needAccomodationFilter} sx={{width: '150px', height: '30px'}} onChange={filterNeedAccomodationChange}>
+            <MenuItem value="all">all</MenuItem>
+            <MenuItem value="Yes">yes</MenuItem>
+            <MenuItem value="No">no</MenuItem>
+            <MenuItem value="DontKnowYet">Don't know</MenuItem>
+          </Select>
+        </div>
+        <div className='filter'>
+          <p>Need transportation</p>
+          <Select defaultValue={"all"} value={needTransportationFilter} sx={{width: '150px', height: '30px'}} onChange={filterNeedTransportationChange}>
+            <MenuItem value="all">all</MenuItem>
+            <MenuItem value="Yes">yes</MenuItem>
+            <MenuItem value="No">no</MenuItem>
+          </Select>
         </div>
       </div>
       <table className='table'>

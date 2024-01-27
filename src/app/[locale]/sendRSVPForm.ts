@@ -8,7 +8,7 @@ export type RSVPFormData = {
   mealRequest: string | undefined;
   needAccomodation: 'Yes' | 'No' | 'DontKnowYet' | undefined;
   accomodationGuestNumber: number;
-  needTransportation: string | undefined;
+  needTransportation: 'Yes' | 'No' | undefined;
 };
 
 export const sendRSVPForm = async ({
