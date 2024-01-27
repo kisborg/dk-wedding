@@ -40,7 +40,7 @@ const RSVP = () => {
     willAttendDetails: undefined,
     mealRequest: undefined,
     needAccomodation: undefined,
-    accomodationGuestNumber: 1,
+    accomodationGuestNumber: 0,
     needTransportation: undefined,
   };
 
@@ -108,7 +108,6 @@ const RSVP = () => {
   const handleAccomodationGuestNumberChange = (
     e: SelectChangeEvent<number>
   ) => {
-    console.log(e.target.value);
     setFormData({
       ...formData,
       accomodationGuestNumber: e.target.value as number,
@@ -147,6 +146,7 @@ const RSVP = () => {
           return false;
         } else if (formData.needAccomodation === 'Yes') {
           setHasValidationError(false);
+          formData.accomodationGuestNumber = 1;
           setCurrentStep(4);
         } else {
           formData.accomodationGuestNumber = 0;

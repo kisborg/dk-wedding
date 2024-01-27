@@ -1,6 +1,21 @@
-.table {
+body {
+  overflow: visible !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.data-container {
+  overflow-y: scroll;
+  height: 100vh;
+}
+
+.filters {
   width: 100%;
-  max-width: 800px;
+}
+.table {
+  overflow: scroll;
+  width: 100%;
+  max-height: 100%;
+  overflow: scroll;
+
   // display: flex;
   // align-items: center;
   // justify-content: center;
@@ -9,15 +24,18 @@
   .tableHeader {
     
     height: 50px;
-    border-collapse: collapse;
+    
     th {
       border-bottom: 2px solid black;
     }
   }
   .record {
     width: 100%;
+    max-width: 100%;
     text-align: center;
     td {
+      min-width: 150px;
+      word-break: break-word;
       border-bottom: 1px solid gray;
     }
   }
