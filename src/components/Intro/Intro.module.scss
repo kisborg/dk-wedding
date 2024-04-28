@@ -1,4 +1,5 @@
 @use '../../app/styles/colors' as colors;
+@import '../../app/styles/breakpoints';
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=Quicksand:wght@300..700&display=swap');
 
@@ -15,6 +16,11 @@
     url('/images/Blueberry_arrangement_8.png') no-repeat left top 20%;
   background-size: 200px;
   overflow-y: scroll;
+  padding-top: 70px;
+
+  @include tablet {
+    padding: 70px 40px 0 40px;
+  }
 
   &::-webkit-scrollbar {
     width: 0;

@@ -4,9 +4,9 @@ import { NextIntlClientProvider } from 'next-intl';
 import { config } from '@fortawesome/fontawesome-svg-core';
 import '@fortawesome/fontawesome-svg-core/styles.css';
 import { AppRouterCacheProvider } from '@mui/material-nextjs/v13-appRouter';
-import { getMessages } from 'next-intl/server';
+import { getMessages, unstable_setRequestLocale } from 'next-intl/server';
 import { getServerSession } from 'next-auth';
-
+import RouteContextProvider from '../contexts/RouteContextProvider';
 import SessionProvider from './SessionProvider';
 import { authOptions } from '../api/auth/[...nextauth]/options';
 config.autoAddCss = false;
@@ -23,6 +23,7 @@ export default async function RootLayout({
   children: React.ReactNode;
   params: { locale: string };
 }) {
+  unstable_setRequestLocale(locale);
   const messages = await getMessages();
   const session = await getServerSession(authOptions);
   return (
@@ -30,9 +31,7 @@ export default async function RootLayout({
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <AppRouterCacheProvider>
-            <SessionProvider session={session}>
-              {children}
-            </SessionProvider>
+            <SessionProvider session={session}>{children}</SessionProvider>
           </AppRouterCacheProvider>
         </NextIntlClientProvider>
       </body>

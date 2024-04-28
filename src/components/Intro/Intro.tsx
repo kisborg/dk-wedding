@@ -1,6 +1,6 @@
 import Logo from '../Logo/Logo';
 import styles from './Intro.module.scss';
-import MainImage from '../../../public/images/dk-bg.png';
+import MainImage from '../../../public/images/main_bg_new_2.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 

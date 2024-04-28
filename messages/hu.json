@@ -3,8 +3,8 @@
     "home": "Főoldal",
     "aboutUs": "Rólunk",
     "rsvp": "RSVP",
-    "schedule": "A Nagy Nap",
-    "faq": "GYÍK"
+    "schedule": "Program",
+    "venue": "Helyszín"
   },
   "RSVP": {
     "willAttend_title": "RSVP",
@@ -50,5 +50,47 @@
     },
     "submit_error_title": "Hiba történt... :(",
     "submit_error_detail": "Kérlek frissitsd az oldalt és próbáld meg újra."
+  },
+
+  "AboutUs": {
+    "1988D": "Dani megszületett Budapesten és megkezdte több éves káoszos rosszalkodását.",
+    "1990D": "Dani apukáját a munka Bulgáriába szólította, így vele együtt költözött az egész család is. A magyar, angol, svéd nyelvi triumvirátust kiegészítette innentől a bolgár nyelv is. Dani ezért úgy döntött 2 és fél éves koráig inkább nem kezd el beszélni. Azóta viszont be sem áll a szája.",
+    "1990K": "Kriszti megszületett egy hideg, északi városkában, Umeå-ban.",
+    "1997K": "Kriszti és anyukája Norvégiába költöztek a nagyszülők és a tágabb család közelébe. Kriszti megtanult a suliban norvégul, nagypapája hatására első unokaként pedig elkezdett hegedülni tanulni (nála).",
+    "2000D": "Dani megkezdte kajakos pályafutását. Bár az elején több időt töltött úszással mint kajakozással (a kajakok billegős jellegéből fakadóan), az évek alatt azonban sok sikert, emléket es barátokat adott a sportág számára.",
+    "2001K": "Kriszti es anyukája ismét útnak indult és Magyarországra költöztek. Kriszti szembesült a magázódás kihívásaival, és hogy Magyarországon nem viccelődnek az úszóedzések számával.",
+    "2002K": "Bár a napi két úszóedzest Kriszti nem vállalta, azonban ha a kosárlabdáról volt szó nem lehetett lebészelni róla. A kosárlabda örömével együtt jöttek azonban a vele járó térdproblémák is. Ki gondolta volna, hogy ez lesz egyike a számtalan kapcsolódási pontnak Kriszti es Dani között?!",
+    "2002D": "Dani megkezdte tanulmányait az Óbudai gimnáziumban.",
+
+    "2004K": "Kriszti megkezdte tanulmányait az Óbudai Gimnáziumban. Kriszti es Dani külön-külön értesültek ekkor róla, hogy van más  \"svéd-magyar\" is az iskolában.",
+    "2006D": "Dani egyetemi évei alatt a közgazdaságtan mellett megismerkedett a koktélok világával és bártenderkent dolgozott különböző fesztiválokon, rendezvényeken. Manapság azonban már nagyobb hangsúlyt kap a koktélok fogyasztása, mintsem a készítésé.",
+    "2009K": "Kriszti egyetemi évei során igazi világutazóvá vált. Miközben tanulmányait Budapest, Stockholm es Sydney városaiban végezte, számtalan más egzotikus helyre is eljutott az évek alatt.",
+    "2010D": "Krisztihez hasonlóan a sport iránti szenvedély szűnni nem akart, mely eredményeképpen Daninál is megjelentek a jó öreg térd problémák.",
+    "2018K": "Kriszti célba ért élete első triatlon versenyén, mellyel kezdetet vette egy szenvedélyes hobbi, ami a mai napig kitart és meghatározó szerepet tölt be Kriszti életében (lámlám, tavaly óta Dani is triatlonozik:)).",
+    "2022KD": "Kriszti es Dani a gimnáziumi évek óta először találkozott egy kis nosztalgiás beszélgetésre. A találkozást követően hamar megszületett az első randi időpontja:).",
+    "2022KDXXX": "...elcsattant az első csók.:)",
+    "2023KD": "Dani feltette a \"nagy\" kérdést egy 10 km-es stockholmi futókör végén (szerencsére a térdek kibírták), es Kriszti \"IGEN-t\" mondott.",
+    "DATE_2022_SEP": "2022. szeptember",
+    "DATE_2022_OCT": "2022. október 8"
+  },
+
+  "Venue": {
+    "TITLE": "Fontos információk a helyszínnel kapcsolatban",
+    "TITLE_CAR": "Autóval érkezőknek",
+    "TITLE_TEMPLE": "I. Templomi szertarttás",
+    "ARRIVAL_TEMPLE": "Érkezés 13:30 és 45 között.",
+    "LOCATION_TEMPLE": "<bold>Helyszín:</bold> Szentendrei Skanzen, cím: 2000 Szentendre, Sztaravodai út 75",
+    "TEMPLE_INSTRUCTION_1": "A szentendrei skanzen parkolójának bejárata előtt lesz egy kis rét jobboldalt (Szentendréről érkezve), ez lesz a dedikált parkolási terület az esküvőnk vendégei részére.",
+    "TEMPLE_INSTRUCTION_2": "Innen öcséink (Marci és Tomi) fognak tovább navigálni Titeket a templom irányába (szaggatott vonallal jelölve a parkolóból)!",
+    "TEMPLE_INSTRUCTION_3": "Kérjük érkezzetek időben (13:30 és 45 között), mert a parkolóból még vár rátok egy pár perces séta :)",
+    "TITLE_RESTAURANT": "II. Polgári szertarttás",
+    "ARRIVAL_RESTAURANT": "Érkezés 17:00 előtt.",
+    "LOCATION_RESTAURANT": "<bold>Helyszín:</bold> Rosinante Fogadó, cím: 2015 Szigetmonostor, Hrsz.: 057/2",
+    "RESTAURANT_INSTRUCTION_1": "Javasolt útvonal: Tahitótfalun keresztül a Tildy Zoltán hídon át a Rosinantéig (Skanzenből kb 30 perc az út).",
+    "RESTAURANT_INSTRUCTION_2": "<bold>Figyeljetek!</bold> Bár a google javasolni fog rövidebb útvonalakat, azonban azok mind kompos átkelést igényelnek, ami szerintünk macerás.",
+    "RESTAURANT_INSTRUCTION_3": "15:30-tól szeretettel várunk Titeket a Rosinantéban! :)",
+    "TITLE_BUS": "A busszal érkezőknek",
+    "BUS_INSTRUCTION": "A szervezett busszal érkezőket 12:30-kor veszi fel a busz a Battyhányi téren és viszi csomagokkal együtt a Skanzenba majd a Rosinantéba (további információk az érintetteknek személyesen).",
+    "GREETING": "Sok szeretettel,"
   }
 }

@@ -34,6 +34,7 @@ export const Menu = React.forwardRef<HTMLDivElement, MenuProps>(function Menu(
   const menu = Ariakit.useMenuStore({ open, setOpen });
   const currentPlacement = menu.useState('currentPlacement');
   const mounted = menu.useState('mounted');
+
   return (
     <MotionConfig reducedMotion='user'>
       <Ariakit.MenuButton

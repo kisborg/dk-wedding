@@ -28,16 +28,11 @@
 }
 
 .button:hover {
-  background-color: hsl(204 20% 96%);
   cursor: pointer;
 }
 
 .button[aria-disabled='true'] {
   opacity: 0.5;
-}
-
-.button[aria-expanded='true'] {
-  background-color: hsl(204 20% 96%);
 }
 
 .button[data-focus-visible] {

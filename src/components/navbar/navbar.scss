@@ -12,6 +12,15 @@
   position: absolute;
   top: 0;
   transition: 200ms ease;
+  font-family: 'nickainley';
+  border-bottom: 1px solid rgba(colors.$blueberry-blue, 0.2);
+  width: 80%;
+  max-width: 1000px;
+  height: 50px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 
   &.hidden {
     top: -70px;
@@ -19,7 +28,7 @@
 
   .nav-menu-item {
     line-height: 50px;
-    font-size: fontSizes.$font-size-navbar;
+    font-size: fontSizes.$font-size-navbar-large;
     font-weight: fontSizes.$font-weight-bold;
     vertical-align: center;
     white-space: nowrap;
@@ -27,7 +36,7 @@
     flex: 1;
     text-align: center;
     &:hover {
-      font-size: fontSizes.$font-size-navbar-hover;
+      font-size: fontSizes.$font-size-navbar-hover-large;
       transition:
         font-size 500ms,
         letter-spacing 500ms;
@@ -38,7 +47,10 @@
       letter-spacing 500ms;
 
     @include tablet {
-      font-size: 16px;
+      font-size: fontSizes.$font-size-navbar;
+      &:hover {
+        font-size: fontSizes.$font-size-navbar-hover;
+      }
     }
   }
 }

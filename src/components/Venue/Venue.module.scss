@@ -1,0 +1,74 @@
+@use '../../app/styles/fontSizes' as fontSizes;
+@use '../../app/styles/colors' as colors;
+
+.venue {
+  font-family: 'Quicksand', sans-serif;
+  color: colors.$blueberry-blue;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+  padding: 70px 80px 40px 80px;
+
+  @media (max-width: 768px) {
+    padding-left: 20px;
+    padding-right: 20px;
+    .mainTitle {
+      font-size: fontSizes.$font-size-header;
+    }
+  }
+
+  .mainTitle {
+    margin-bottom: 50px;
+  }
+
+  .headerContainer {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    .header {
+      font-size: fontSizes.$font-size-rsvp-header-small;
+      margin-right: 20px;
+    }
+  }
+
+  &::-webkit-scrollbar {
+    width: 0;
+    display: none;
+  }
+
+  .contentContainer {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    .smallTitle {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    img {
+      margin: 30px 0px;
+      width: 100%;
+      height: auto;
+      max-width: 600px;
+      border-radius: 10px;
+      box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      align-self: center;
+    }
+
+    .mapRestaurant {
+      max-height: 500px;
+      width: auto;
+    }
+  }
+  .greetings {
+    margin-top: 10px;
+    font-size: fontSizes.$font-size-header;
+    .signature {
+      font-family: 'nickainley';
+    }
+  }
+}

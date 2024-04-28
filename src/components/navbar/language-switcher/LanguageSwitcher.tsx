@@ -1,4 +1,5 @@
-import { useState } from 'react';
+'use client';
+import { useEffect, useRef, useState } from 'react';
 import type { MotionProps, Variants } from 'framer-motion';
 import { Menu, MenuItem } from './LanguageItem';
 import './LanguageSwitcher.scss';
@@ -30,17 +31,31 @@ const item = {
   transition: { opacity: { duration: 0.2 } },
 } satisfies MotionProps;
 
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ isSmall }: { isSmall: boolean }) {
   const [open, setOpen] = useState(false);
   const router = useRouter();
   const pathname = usePathname();
-  const selectedLanguage = pathname === '/en' ? 'English' : 'Magyar';
-  const [language, setLanguage] = useState(selectedLanguage);
+
+  const [language, setLanguage] = useState(
+    pathname === '/en' ? 'English' : 'Magyar'
+  );
   const switchLanguage = (lang: string) => {
+    if (isSmall) {
+      setLanguage(lang === 'English' ? 'EN' : 'HU');
+    }
     setLanguage(lang);
     const localization = lang === 'English' ? '/en' : '/hu';
-    router.push(localization);
+    router.replace(localization);
   };
+
+  useEffect(() => {
+    if (isSmall) {
+      setLanguage(pathname === '/en' ? 'EN' : 'HU');
+    } else {
+      setLanguage(pathname === '/en' ? 'English' : 'Magyar');
+    }
+  }, [isSmall, pathname]);
+
   return (
     <Menu
       label={language}

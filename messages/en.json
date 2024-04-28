@@ -3,8 +3,8 @@
     "home": "Home",
     "aboutUs": "About Us",
     "rsvp": "RSVP",
-    "schedule": "Our Big Day",
-    "faq": "FAQ"
+    "schedule": "Schedule",
+    "venue": "Venue"
   },
   "RSVP": {
     "willAttend_title": "RSVP",
@@ -50,5 +50,24 @@
     },
     "submit_error_title": "Oops, something went wrong... :(",
     "submit_error_detail": "Please, refresh the page and try again."
+  },
+  "Venue": {
+    "TITLE": "Information about getting to the venue",
+    "TITLE_CAR": "For our guests arriving by car",
+    "TITLE_TEMPLE": "I. Wedding ceremony (Church)",
+    "ARRIVAL_TEMPLE": "Please arrive between 1:30 - 45 pm.",
+    "LOCATION_TEMPLE": "<bold>Address:</bold> Skanzen (Hungarian Open air Museum), 2000 Szentendre, Sztaravodai way  75",
+    "TEMPLE_INSTRUCTION_1": "The entrance to our dedicated parking area will be located on the right side of the road (exiting Szentendre). See below map and link for exact coordinates.",
+    "TEMPLE_INSTRUCTION_2": "Be aware that this in not the official entrance of Skanzen, i.e. do not drive to the location marked with X on the map.",
+    "TEMPLE_INSTRUCTION_3": "Our brothers (Marci & Tomi) will be waiting for you at the parking lot to navigate you further. Please arrive on time (between 13:30 and 45) as you will still need to take a short walk to the church.",
+    "TITLE_RESTAURANT": "II. Civil Ceremony",
+    "ARRIVAL_RESTAURANT": "Arrival before 5 pm.",
+    "LOCATION_RESTAURANT": "<bold>Address:</bold> Rosinante Country Inn - 2015 Szigetmonostor, Hrsz.: 057/2",
+    "RESTAURANT_INSTRUCTION_1": "We recommend you to drive to Rosinante via Tahitótfalu by crossing the bridge Tildy Zoltán (approximately 30 mins from Skanzen).",
+    "RESTAURANT_INSTRUCTION_2": "Google may suggest you alternative routes however these will require crossing the river Danube by ferry which can become a hustle.",
+    "RESTAURANT_INSTRUCTION_3": "We look forward to seeing you at Rosinante starting 15:30. :)",
+    "TITLE_BUS": "Bus transport",
+    "BUS_INSTRUCTION": "For our guest arriving with the organised transportation, please be at Battyhány square at 12:30 pm (further information will be send out in private).",
+    "GREETING": "With love,"
   }
 }
