@@ -35,6 +35,10 @@ import {
   TConductorInstance,
 } from 'react-canvas-confetti/dist/types';
 
+import { Quicksand } from 'next/font/google';
+
+const quicksand = Quicksand({ subsets: ['latin'] });
+
 const AboutUs = () => {
   const t = useTranslations('AboutUs');
   const ref = useRef<HTMLDivElement>(null);
@@ -67,6 +71,7 @@ const AboutUs = () => {
       setHasPopped(true);
     }
   };
+
   return (
     <div className='about-us' ref={ref} onScroll={handleScroll}>
       <div className='main-image-container'>
@@ -75,7 +80,9 @@ const AboutUs = () => {
       <div className='title-container'>
         <h1 className='title'>A mi kis történetünk...</h1>
       </div>
-      <VerticalTimeline className='top-timeline-container'>
+      <VerticalTimeline
+        className={`'top-timeline-container' ${quicksand.className}`}
+      >
         <TimelineElement
           className='vertical-timeline-element--work'
           date='1988'
@@ -195,12 +202,9 @@ const AboutUs = () => {
           <p>{t('2018K')}</p>
         </TimelineElement>
       </VerticalTimeline>
-      {/* <div className='empty-container'>
-        <h1 className='title'></h1>
-      </div> */}
       <VerticalTimeline
         layout='1-column-left'
-        className='bottom-timeline-container'
+        className={`'bottom-timeline-container' ${quicksand.className}`}
       >
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -220,7 +224,7 @@ const AboutUs = () => {
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
-          date={t('DATE_2022_OCT')}
+          date={t('DATE_2023_OCT')}
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<RingIcon />}
         >
