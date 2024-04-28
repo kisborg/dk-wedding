@@ -4,6 +4,14 @@ import MainImage from '../../../public/images/main_bg_new_2.png';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 
+import { Quicksand, Old_Standard_TT } from 'next/font/google';
+
+const quicksand = Quicksand({ subsets: ['latin'] });
+const oldStandard = Old_Standard_TT({
+  subsets: ['latin'],
+  weight: '400',
+});
+
 const Intro = () => {
   return (
     <div className={styles.intro}>
@@ -32,12 +40,14 @@ const Intro = () => {
         initial={{ width: '0px', overflow: 'hidden' }}
       >
         <div className={styles.date}>
-          <div className={styles.month}>JUNE</div>
-          <div className={styles.dayandyear}>
+          <div className={`${styles.month} ${quicksand.className}`}>JUNE</div>
+          <div className={`${styles.dayandyear} ${oldStandard.className}`}>
             8<br />
             2024
           </div>
-          <div className={styles.dayintext}>SATURDAY</div>
+          <div className={`${styles.dayintext} ${quicksand.className}`}>
+            SATURDAY
+          </div>
         </div>
       </motion.div>
     </div>

@@ -9,11 +9,15 @@ import CarIcon from '../../../public/images/car_icon.svg';
 import BusIcon from '../../../public/images/bus_icon.svg';
 import { useTranslations } from 'next-intl';
 
+import { Quicksand } from 'next/font/google';
+
+const quicksand = Quicksand({ subsets: ['latin'] });
+
 const Venue = () => {
   const params = useParams();
   const t = useTranslations('Venue');
   return (
-    <div className={styles.venue}>
+    <div className={`${styles.venue} ${quicksand.className}`}>
       <h1 className={styles.mainTitle}>{t('TITLE')}</h1>
 
       <div className={styles.sectionContainer}>

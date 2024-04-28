@@ -1,6 +1,8 @@
 @use '../../app/styles/fontSizes' as fontSizes;
 @use '../../app/styles/_colors' as colors;
 @import '../../app/styles/breakpoints';
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
 .rsvp {
   color: colors.$blueberry-blue;
   height: 100%;

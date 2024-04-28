@@ -1,5 +1,4 @@
 @use '../../app/styles/fontSizes' as fontSizes;
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
 
 .about-us {
   color: #163151;
@@ -46,11 +45,8 @@
 
   .vertical-timeline-element-content {
     margin-bottom: 50px;
-    font-family: 'Quicksand', sans-serif;
   }
 
-  .vertical-timeline {
-  }
   .vertical-timeline-element-date {
     font-weight: 700;
     opacity: 1;
