@@ -1,4 +1,5 @@
 @use '../../app/styles/fontSizes' as fontSizes;
+@import '../../app/styles/breakpoints';
 
 .about-us {
   color: #163151;
@@ -6,6 +7,8 @@
   width: 100%;
   overflow-y: scroll;
   margin-top: 100px;
+  background-position: right center;
+
   .main-image-container {
     margin-top: 10px;
     width: 100%;
@@ -45,6 +48,9 @@
 
   .vertical-timeline-element-content {
     margin-bottom: 50px;
+    max-width: 600px;
+    background-color: rgba(white, 0.7);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
   }
 
   .vertical-timeline-element-date {
@@ -106,6 +112,18 @@
   margin-top: 30px;
   padding-top: 0;
   padding-bottom: 0;
+  // background: url('/images/about_bg_1.png'), url('/images/about_bg_2.png'),
+  //   url('/images/about_bg_3.png'), url('/images/about_bg_4.png'),
+  //   url('/images/about_bg_5.png'), url('/images/about_bg_6.png');
+  // background-size: 400px;
+  // background-position:
+  //   0% 5%,
+  //   90% 25%,
+  //   0% 45%,
+  //   100% 55%,
+  //   0% 70%,
+  //   0% 85%;
+  // background-repeat: no-repeat;
 }
 
 .bottom-timeline-container {
@@ -113,19 +131,102 @@
   padding-top: 0;
 }
 
-.story-container {
-  display: flex;
-  p {
-    flex: 1;
-    margin-right: 10px;
-  }
-
-  .image-container {
+.top-timeline-container {
+  .story-container {
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
+    p {
+      flex: 1;
+      margin-right: 10px;
+    }
 
+    .image-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+    }
+
+    @include mobile {
+      position: relative;
+      p {
+        margin-bottom: 50px;
+      }
+      .image-container {
+        position: absolute;
+        bottom: -30px !important;
+        right: 20px;
+      }
+
+      .worldtraveler-image {
+        width: 70px;
+        height: auto;
+      }
+    }
+
+    &.kayak-story {
+      @include mobile {
+        .image-container {
+          img {
+            width: 120px;
+            height: auto;
+          }
+        }
+      }
+    }
   }
 
-  
+  &.vertical-timeline--two-columns {
+    .story-container {
+      position: relative;
+      p {
+        margin-bottom: 70px;
+      }
+      .image-container {
+        position: absolute;
+        bottom: 0px;
+        right: 20px;
+      }
+
+      &.cocktail {
+        p {
+          margin-bottom: 80px;
+        }
+
+        img {
+          width: 100px;
+          height: auto;
+        }
+      }
+
+      .worldtraveler-image {
+        width: 70px;
+        height: auto;
+      }
+    }
+  }
+}
+
+.bottom-timeline-container {
+  .story-container {
+    display: flex;
+    flex-direction: column;
+    p {
+      margin-bottom: 20px;
+    }
+    .image-container {
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+    }
+
+    &.shesaidyes {
+      .image-container {
+        width: 100%;
+        justify-content: center;
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
 }

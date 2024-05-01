@@ -28,9 +28,21 @@ import MainPic from '../../../public/images/about_us_main.png';
 import BabyBoy from '../../../public/images/baby_boy.png';
 import BabyGirl from '../../../public/images/baby_girl.png';
 import KneeIcon from '../../../public/images/knee_icon.svg';
+import KneeGif from '../../../public/images/knee.gif';
 import RingIcon from '../../../public/images/ring_small.svg';
 import TravellingImage from '../../../public/images/travelling.png';
 import VikingBoatImage from '../../../public/images/viking_boat.png';
+import KayakImage from '../../../public/images/kayak.png';
+import SwimmingImage from '../../../public/images/swimming.png';
+import FlagsImage from '../../../public/images/flags.png';
+import CocktailImage from '../../../public/images/cocktail.gif';
+import WorldTraveler from '../../../public/images/world_traveler.png';
+import TriathlonImage from '../../../public/images/triathlon.png';
+import Goldblum from '../../../public/images/excite.gif';
+import TheOffice from '../../../public/images/celebrate.gif';
+import BasketballImage from '../../../public/images/baskteball.png';
+import SheSaidYes from '../../../public/images/shesaidyes.png';
+
 import Image from 'next/image';
 import { useRef, useState } from 'react';
 import {
@@ -84,7 +96,7 @@ const AboutUs = () => {
         <h1 className='title'>A mi kis történetünk...</h1>
       </div>
       <VerticalTimeline
-        className={`'top-timeline-container' ${quicksand.className}`}
+        className={`top-timeline-container ${quicksand.className}`}
       >
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -93,12 +105,17 @@ const AboutUs = () => {
           position='left'
           icon={<FontAwesomeIcon icon={faBaby} />}
         >
-           <div className='story-container'>
+          <div className='story-container'>
             <p>{t('1988D')}</p>
             <div className='image-container'>
-              <Image src={BabyBoy} className='baby-image' alt='baby' width={70} />
-            </div>    
-          </div>  
+              <Image
+                src={BabyBoy}
+                className='baby-image'
+                alt='baby'
+                width={70}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -110,9 +127,14 @@ const AboutUs = () => {
           <div className='story-container'>
             <p>{t('1990K')}</p>
             <div className='image-container'>
-              <Image src={BabyGirl} className='baby-image' alt='baby' width={70} />
-            </div>    
-          </div>  
+              <Image
+                src={BabyGirl}
+                className='baby-image'
+                alt='baby'
+                width={70}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -124,9 +146,14 @@ const AboutUs = () => {
           <div className='story-container'>
             <p>{t('1990D')}</p>
             <div className='image-container'>
-              <Image src={TravellingImage} className='travel-image' alt='travelling' width={70} />
-            </div>    
-          </div>         
+              <Image
+                src={TravellingImage}
+                className='travel-image'
+                alt='travelling'
+                width={70}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -138,8 +165,13 @@ const AboutUs = () => {
           <div className='story-container'>
             <p>{t('1997K')}</p>
             <div className='image-container'>
-              <Image src={VikingBoatImage} className='viking-image' alt='travelling' width={70} />
-            </div>           
+              <Image
+                src={VikingBoatImage}
+                className='viking-image'
+                alt='travelling'
+                width={70}
+              />
+            </div>
           </div>
         </TimelineElement>
         <TimelineElement
@@ -149,7 +181,17 @@ const AboutUs = () => {
           position='left'
           icon={<FontAwesomeIcon icon={faMedal} />}
         >
-          <p>{t('2000D')}</p>
+          <div className='story-container kayak-story'>
+            <p>{t('2000D')}</p>
+            <div className='image-container'>
+              <Image
+                src={KayakImage}
+                className='kayak-image'
+                alt='kayak'
+                width={150}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -158,7 +200,17 @@ const AboutUs = () => {
           position='right'
           icon={<FontAwesomeIcon icon={faSwimmer} />}
         >
-          <p>{t('2001K')}</p>
+          <div className='story-container'>
+            <p>{t('2001K')}</p>
+            <div className='image-container'>
+              <Image
+                src={SwimmingImage}
+                className='swim-image'
+                alt='swimming'
+                width={100}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -176,7 +228,17 @@ const AboutUs = () => {
           position='right'
           icon={<FontAwesomeIcon icon={faBasketball} />}
         >
-          <p>{t('2002K')}</p>
+          <div className='story-container'>
+            <p>{t('2002K')}</p>
+            <div className='image-container'>
+              <Image
+                src={BasketballImage}
+                className='basketball-image'
+                alt='basketball'
+                width={70}
+              />
+            </div>
+          </div>
         </TimelineElement>
 
         <TimelineElement
@@ -186,7 +248,17 @@ const AboutUs = () => {
           position='right'
           icon={<FontAwesomeIcon icon={faBookOpen} />}
         >
-          <p>{t('2004K')}</p>
+          <div className='story-container'>
+            <p>{t('2004K')}</p>
+            <div className='image-container'>
+              <Image
+                src={FlagsImage}
+                className='school-image'
+                alt='school'
+                width={100}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -195,7 +267,17 @@ const AboutUs = () => {
           position='left'
           icon={<FontAwesomeIcon icon={faMartiniGlass} />}
         >
-          <p>{t('2006D')}</p>
+          <div className='story-container cocktail'>
+            <p>{t('2006D')}</p>
+            <div className='image-container'>
+              <Image
+                src={CocktailImage}
+                className='cocktail-image'
+                alt='cocktail'
+                width={100}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -204,7 +286,17 @@ const AboutUs = () => {
           position='right'
           icon={<FontAwesomeIcon icon={faEarthOceania} />}
         >
-          <p>{t('2009K')}</p>
+          <div className='story-container'>
+            <p>{t('2009K')}</p>
+            <div className='image-container'>
+              <Image
+                src={WorldTraveler}
+                className='worldtraveler-image'
+                alt='travel'
+                width={100}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -213,7 +305,17 @@ const AboutUs = () => {
           position='left'
           icon={<KneeIcon />}
         >
-          <p>{t('2010D')}</p>
+          <div className='story-container'>
+            <p>{t('2010D')}</p>
+            <div className='image-container'>
+              <Image
+                src={KneeGif}
+                className='knee-image'
+                alt='knee hurts'
+                width={100}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -222,12 +324,22 @@ const AboutUs = () => {
           position='right'
           icon={<FontAwesomeIcon icon={faBicycle} />}
         >
-          <p>{t('2018K')}</p>
+          <div className='story-container'>
+            <p>{t('2018K')}</p>
+            <div className='image-container'>
+              <Image
+                src={TriathlonImage}
+                className='triathlon-image'
+                alt='triathlon'
+                width={100}
+              />
+            </div>
+          </div>
         </TimelineElement>
       </VerticalTimeline>
       <VerticalTimeline
         layout='1-column-left'
-        className={`'bottom-timeline-container' ${quicksand.className}`}
+        className={`bottom-timeline-container ${quicksand.className}`}
       >
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -235,7 +347,17 @@ const AboutUs = () => {
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<FontAwesomeIcon icon={faHeart} />}
         >
-          <p>{t('2022KD')}</p>
+          <div className='story-container'>
+            <p>{t('2022KD')}</p>
+            <div className='image-container'>
+              <Image
+                src={Goldblum}
+                className='goldblum-image'
+                alt='goldblum'
+                width={150}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -243,7 +365,17 @@ const AboutUs = () => {
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<FontAwesomeIcon icon={faFaceKiss} />}
         >
-          <p>{t('2022KDXXX')}</p>
+          <div className='story-container firstkiss'>
+            <p>{t('2022KDXXX')}</p>
+            <div className='image-container'>
+              <Image
+                src={TheOffice}
+                className='firstkiss-image'
+                alt='the office celebration'
+                width={250}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'
@@ -251,7 +383,21 @@ const AboutUs = () => {
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<RingIcon />}
         >
-          <p>{t('2023KD')}</p>
+          <div className='story-container shesaidyes'>
+            <p>
+              {t.rich('2023KD', {
+                bold: (chunks) => <b>{chunks}</b>,
+              })}
+            </p>
+            <div className='image-container'>
+              <Image
+                src={SheSaidYes}
+                className='shesaidyes-image'
+                alt='she said yes'
+                width={350}
+              />
+            </div>
+          </div>
         </TimelineElement>
       </VerticalTimeline>
       <Fireworks
