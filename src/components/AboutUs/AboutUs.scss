@@ -112,3 +112,20 @@
   padding-bottom: 50px;
   padding-top: 0;
 }
+
+.story-container {
+  display: flex;
+  p {
+    flex: 1;
+    margin-right: 10px;
+  }
+
+  .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+  }
+
+  
+}

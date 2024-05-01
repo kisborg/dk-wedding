@@ -15,6 +15,7 @@ const oldStandard = Old_Standard_TT({
 const Intro = () => {
   return (
     <div className={styles.intro}>
+      <div className={styles.container}>
       <Logo />
       <motion.div
         animate={{
@@ -50,6 +51,8 @@ const Intro = () => {
           </div>
         </div>
       </motion.div>
+      </div>
+      
     </div>
   );
 };
