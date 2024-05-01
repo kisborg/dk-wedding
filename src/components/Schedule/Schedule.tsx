@@ -1,5 +1,5 @@
 import './Schedule.scss';
-import ScheduleImageEn from '../../../public/images/schedule.png';
+import ScheduleImageEn from '../../../public/images/program_en.png';
 import ScheduleImageHu from '../../../public/images/program_hu.png';
 import Image from 'next/image';
 import { useParams } from 'next/navigation';
