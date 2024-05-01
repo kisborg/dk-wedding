@@ -42,6 +42,7 @@ import Goldblum from '../../../public/images/excite.gif';
 import TheOffice from '../../../public/images/celebrate.gif';
 import BasketballImage from '../../../public/images/baskteball.png';
 import SheSaidYes from '../../../public/images/shesaidyes.png';
+import School from '../../../public/images/school.png';
 
 import Image from 'next/image';
 import { useRef, useState } from 'react';
@@ -219,7 +220,17 @@ const AboutUs = () => {
           position='left'
           icon={<FontAwesomeIcon icon={faBookOpen} />}
         >
-          <p>{t('2002D')}</p>
+          <div className='story-container'>
+            <p>{t('2002D')}</p>
+            <div className='image-container'>
+              <Image
+                src={School}
+                className='school-image'
+                alt='school'
+                width={70}
+              />
+            </div>
+          </div>
         </TimelineElement>
         <TimelineElement
           className='vertical-timeline-element--work'

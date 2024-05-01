@@ -1,4 +1,8 @@
 {
+  "Intro": {
+    "date_month": "JUNE",
+    "date_day": "SATURDAY"
+  },
   "Navbar": {
     "home": "Home",
     "aboutUs": "About Us",
@@ -50,6 +54,27 @@
     },
     "submit_error_title": "Oops, something went wrong... :(",
     "submit_error_detail": "Please, refresh the page and try again."
+  },
+  "AboutUs": {
+    "1988D": "1988 - Daniel was born in Budapest, and thus began a multi-year period  of chaotic mischief.",
+    "1990D": "Daniel’s dad got “called for duty” in Bulgaria, so the family moved abroad and Bulgarian joined the already tricky Swedish-Hungarian-English (“Swunglish”) language environment. Daniel found this too much to handle so he decided to hold off from speaking until the age of 2.5 years. Since then however he’s not shied away one bit from talking.",
+    "1990K": "Christina was born in a cold, northern little town, called Umeå.",
+    "1997K": "Christina and her Mom moved to Norway close to her grandparents and the broader family. Christina got to learn Norwegian in school and began taking violin lessons from her grandfather who had encouraged her to try it out in the first place.",
+    "2000D": "Daniel began his sports career in kayak. At first he spent more time in and under water than above (in the boat) due to the unstable nature of kayaks. Eventually however the sport enabled him to experience success, make new friends and create  plenty of pleasant memories during those years.",
+    "2001K": "Christina and her Mom departed once again and moved to Hungary. Chrisitina experienced the difficulties of the Hungarian custom to use formal language when addressing your elders and realized that taking swimming lessons in Hungary is no joke (there is no “casual mode”).",
+    "2002K": "Going to swim classes twice a day was out of the question for Christina, however when it came to basketball you could not keep her off the court. With the joy and enthusiasm surrounding basketball came unfortunately the related knee injuries as well. Who could have guessed this would be one of many connecting “anchors” between herself and Daniel?!",
+    "2002D": "Daniel began his studies at Óbudai secondary school.",
+    "2004K": "Christina began her studies at Óbudai secondary school. Christina and Daniel found out that there were other “Swedish-Hungarian” as well at school.",
+    "2006D": "During his economics studies at university Daniel learnt the ins and outs of making cocktails and he even worked as a bartender at different festivals.These days however he spends more time on the opposite side of the bar as a customer.",
+    "2009K": "During her university years Christina became a real globetrotter, studying in the cities of Budapest, Stockholm and Sydney, but also visiting many other exotic locations as a tourist.",
+    "2010D": "Similarly to Christina, Daniel’s passion for all kinds of sports eventually lead to injuries around the good old knee.",
+    "2018K": "Christina successfully completed her first triathlon race, which became the starting point for a passionate hobby that remains a very important part of her life even these days.Interestingly enough Daniel completed his first triathlon race last year:)",
+    "2022KD": "Christina and Daniel met for the first time since the secondary school years for a nostalgic chat about the “good old times”. Shortly afterwards they scheduled their first date:).",
+    "2022KDXXX": "The First Kiss:)",
+    "2023KD": "At the end of a 10k run in Stockholm Daniel got down to one knee and “popped the question” to which Christina responded “YES” (luckily the knees functioned well that day).",
+    "DATE_2022_SEP": "2022 September",
+    "DATE_2022_OCT": "2022 8th October",
+    "DATE_2023_OCT": "2023 8th October"
   },
   "Venue": {
     "TITLE": "Information about getting to the venue",
