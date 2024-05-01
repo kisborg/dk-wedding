@@ -1,12 +1,26 @@
+@import '../../app/styles/breakpoints';
+
 .schedule {
+  overflow-y: scroll;
   height: 100%;
-  width: 100%;
-  padding: 120px 80px 50px 80px;
-  display: flex;
-  justify-content: center;
+  margin-top: 100px;
+  padding-bottom: 80px;
+
+  @include mobile {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   .schedule-image {
-    width: auto;
-    height: 100%;
+    height: auto;
+    max-width: 500px;
+    width: 100%;
   }
 }

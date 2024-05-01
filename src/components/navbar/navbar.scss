@@ -52,5 +52,12 @@
         font-size: fontSizes.$font-size-navbar-hover;
       }
     }
+
+    @include mobile {
+      font-size: 14px;
+      &:hover {
+        font-size: 16px;
+      }
+    }
   }
 }
