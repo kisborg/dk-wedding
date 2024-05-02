@@ -1,4 +1,6 @@
 @use '../../../app/styles/colors' as colors;
+@import '../../../app/styles/breakpoints';
+
 .button {
   display: flex;
   height: 100%;
@@ -11,7 +13,7 @@
   border-style: none;
   padding-left: 1rem;
   padding-right: 1rem;
-  font-size: 1rem;
+  font-size: 20px;
   font-family: 'nickainley';
   line-height: 1.5rem;
   color: colors.$blueberry-blue;
@@ -25,6 +27,14 @@
     inset 0 -1px 0 var(--shadow),
     0 1px 1px var(--shadow);
   font-weight: 500;
+
+  @include tablet {
+    font-size: 16px;
+
+    @include mobile {
+      font-size: 12px;
+    }
+  }
 }
 
 .button:hover {

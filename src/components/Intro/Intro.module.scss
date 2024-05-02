@@ -6,15 +6,23 @@
   height: 100%;
 
   background:
-    url('/images/Blueberry_arrangement_9.png') no-repeat right bottom 20%,
+    url('/images/Blueberry_arrangement_9.png') no-repeat right bottom 10%,
     url('/images/Blueberry_arrangement_8.png') no-repeat left top 20%;
-  background-size: 200px;
+  background-size: 300px;
   margin-top: 100px;
-  padding-bottom: 50px;
+  padding-bottom: 100px;
   overflow-y: scroll;
 
   @include tablet {
+    background-size: 250px;
     padding: 0px 40px 70px 40px;
+
+    @include mobile {
+      background:
+        url('/images/Blueberry_arrangement_9.png') no-repeat right bottom 20%,
+        url('/images/Blueberry_arrangement_8.png') no-repeat left top 20%;
+      background-size: 200px;
+    }
   }
 
   &::-webkit-scrollbar {
