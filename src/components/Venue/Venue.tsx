@@ -80,6 +80,7 @@ const Venue = () => {
           <p>{t('BUS_INSTRUCTION')}</p>
         </div>
       </div>
+      <p className={styles.contact}>{t('CONTACT')}</p>
       <div className={styles.greetings}>
         <p>{t('GREETING')}</p>
         <p className={styles.signature}>Kriszti & Dani</p>

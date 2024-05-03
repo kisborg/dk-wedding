@@ -26,7 +26,7 @@
     "accomodation_prices_kids_small": "Kids below 4 are <bold>free of charge</bold>",
     "accomodation_alternatives": "In case all rooms have been booked at the venue, we can help you find alternative accomodation.",
     "accomodation_yes": "I would like accommodation",
-    "accomodation_no": "I don’t need accomodation",
+    "accomodation_no": "I don't need accomodation",
     "accomodation_unknown": "I don't know yet",
     "accomodation_num_of_guests": "How many people would you like accommodation for?",
     "guest_number_label": "Number of guests",
@@ -43,7 +43,7 @@
     "no": "No",
     "other": "Other",
     "other_detail": "Please, provide details...",
-    "sorry_cannot_attend": "We are sorry you can’t make it! Thank you for your confirmation!",
+    "sorry_cannot_attend": "We are sorry you can't make it! Thank you for your confirmation!",
     "next": "Next",
     "send": "Send",
     "rsvpValidation": {
@@ -56,22 +56,22 @@
     "submit_error_detail": "Please, refresh the page and try again."
   },
   "AboutUs": {
-    "1988D": "1988 - Daniel was born in Budapest, and thus began a multi-year period  of chaotic mischief.",
-    "1990D": "Daniel’s dad got “called for duty” in Bulgaria, so the family moved abroad and Bulgarian joined the already tricky Swedish-Hungarian-English (“Swunglish”) language environment. Daniel found this too much to handle so he decided to hold off from speaking until the age of 2.5 years. Since then however he’s not shied away one bit from talking.",
-    "1990K": "Christina was born in a cold, northern little town, called Umeå.",
-    "1997K": "Christina and her Mom moved to Norway close to her grandparents and the broader family. Christina got to learn Norwegian in school and began taking violin lessons from her grandfather who had encouraged her to try it out in the first place.",
+    "1988D": "Daniel was born in Budapest, and thus began a multi-year period  of chaotic mischief.",
+    "1990D": "Daniel's dad got “called for duty” in Bulgaria, so the family moved abroad and Bulgarian joined the already tricky Swedish-Hungarian-English (“Swunglish”) language environment. Daniel found this too much to handle so he decided to hold off from speaking until the age of 2.5 years. Since then however he's not shied away one bit from talking.",
+    "1990K": "Krisztina was born in a cold, northern little town, called Umeå.",
+    "1997K": "Krisztina and her Mom moved to Norway close to her grandparents and the broader family. Krisztina got to learn Norwegian in school and her grandfather started teaching his first grandchild to play the violin.",
     "2000D": "Daniel began his sports career in kayak. At first he spent more time in and under water than above (in the boat) due to the unstable nature of kayaks. Eventually however the sport enabled him to experience success, make new friends and create  plenty of pleasant memories during those years.",
-    "2001K": "Christina and her Mom departed once again and moved to Hungary. Chrisitina experienced the difficulties of the Hungarian custom to use formal language when addressing your elders and realized that taking swimming lessons in Hungary is no joke (there is no “casual mode”).",
-    "2002K": "Going to swim classes twice a day was out of the question for Christina, however when it came to basketball you could not keep her off the court. With the joy and enthusiasm surrounding basketball came unfortunately the related knee injuries as well. Who could have guessed this would be one of many connecting “anchors” between herself and Daniel?!",
+    "2001K": "Krisztina and her Mom moved  once again, this time to Hungary. Krisztina experienced the difficulties of the Hungarian custom to use formal language when addressing your elders and realized that taking swimming lessons in Hungary is no joke (there is no “casual mode”).",
+    "2002K": "Going to swim classes twice a day was out of the question for Krisztina, however when it came to basketball you could not keep her off the court. With the joy and enthusiasm surrounding basketball came unfortunately the related knee injuries as well. Who could have guessed this would be one of many connecting “anchors” between herself and Daniel?!",
     "2002D": "Daniel began his studies at Óbudai secondary school.",
-    "2004K": "Christina began her studies at Óbudai secondary school. Christina and Daniel found out that there were other “Swedish-Hungarian” as well at school.",
+    "2004K": "Krisztina began her studies at Óbudai secondary school. Krisztinaand Daniel found out that there were other “Swedish-Hungarian” kids as well at school.",
     "2006D": "During his economics studies at university Daniel learnt the ins and outs of making cocktails and he even worked as a bartender at different festivals.These days however he spends more time on the opposite side of the bar as a customer.",
-    "2009K": "During her university years Christina became a real globetrotter, studying in the cities of Budapest, Stockholm and Sydney, but also visiting many other exotic locations as a tourist.",
-    "2010D": "Similarly to Christina, Daniel’s passion for all kinds of sports eventually lead to injuries around the good old knee.",
-    "2018K": "Christina successfully completed her first triathlon race, which became the starting point for a passionate hobby that remains a very important part of her life even these days.Interestingly enough Daniel completed his first triathlon race last year:)",
-    "2022KD": "Christina and Daniel met for the first time since the secondary school years for a nostalgic chat about the “good old times”. Shortly afterwards they scheduled their first date:).",
+    "2009K": "During her university years Krisztina became a real globetrotter, studying in the cities of Budapest, Stockholm and Sydney, but also visiting many other exotic locations as a tourist.",
+    "2010D": "Similarly to Krisztina, Daniel's passion for all kinds of sports eventually lead to injuries around the good old knee.",
+    "2018K": "Krisztina successfully completed her first triathlon race, which became the starting point for a passionate hobby that remains a very important part of her life even these days.Interestingly enough Daniel completed his first triathlon race last year:)",
+    "2022KD": "Krisztina and Daniel met for the first time since the secondary school years for a nostalgic chat about the “good old times”. Shortly afterwards they scheduled their first date:).",
     "2022KDXXX": "The First Kiss:)",
-    "2023KD": "At the end of a 10k run in Stockholm Daniel got down to one knee and “popped the question” to which Christina responded “YES” (luckily the knees functioned well that day).",
+    "2023KD": "At the end of a 10k run in Stockholm Daniel got down to one knee and “popped the question” to which Krisztina responded “YES” (luckily the knees functioned well that day).",
     "DATE_2022_SEP": "2022 September",
     "DATE_2022_OCT": "2022 8th October",
     "DATE_2023_OCT": "2023 8th October"
@@ -93,6 +93,7 @@
     "RESTAURANT_INSTRUCTION_3": "We look forward to seeing you at Rosinante starting 15:30. :)",
     "TITLE_BUS": "Bus transport",
     "BUS_INSTRUCTION": "For our guest arriving with the organised transportation, please be at Battyhány square at 12:30 pm (further information will be send out in private).",
-    "GREETING": "With love,"
+    "GREETING": "With love,",
+    "CONTACT": "In case of any question, do not hesitate to reach out to our event organiser, Csongor (+36302918729)"
   }
 }

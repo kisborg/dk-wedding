@@ -79,7 +79,7 @@
   "Venue": {
     "TITLE": "Fontos információk a helyszínnel kapcsolatban",
     "TITLE_CAR": "Autóval érkezőknek",
-    "TITLE_TEMPLE": "I. Templomi szertarttás",
+    "TITLE_TEMPLE": "I. Templomi szertartás",
     "ARRIVAL_TEMPLE": "Érkezés 13:30 és 45 között.",
     "LOCATION_TEMPLE": "<bold>Helyszín:</bold> Szentendrei Skanzen, cím: 2000 Szentendre, Sztaravodai út 75",
     "TEMPLE_INSTRUCTION_1": "A szentendrei skanzen parkolójának bejárata előtt lesz egy kis rét jobboldalt (Szentendréről érkezve), ez lesz a dedikált parkolási terület az esküvőnk vendégei részére.",
@@ -93,6 +93,7 @@
     "RESTAURANT_INSTRUCTION_3": "15:30-tól szeretettel várunk Titeket a Rosinantéban! :)",
     "TITLE_BUS": "A busszal érkezőknek",
     "BUS_INSTRUCTION": "A szervezett busszal érkezőket 12:30-kor veszi fel a busz a Battyhányi téren és viszi csomagokkal együtt a Skanzenba majd a Rosinantéba (további információk az érintetteknek személyesen).",
-    "GREETING": "Sok szeretettel,"
+    "GREETING": "Sok szeretettel,",
+    "CONTACT": "Kérdés esetén nyugodtan keressétek a ceremóniamesterünket, Csongort (+36302918729)"
   }
 }
