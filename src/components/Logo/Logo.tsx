@@ -16,6 +16,7 @@ const Logo = () => {
         src={LogoImage}
         height={undefined}
         width={undefined}
+        priority
       ></Image>
     </motion.div>
   );

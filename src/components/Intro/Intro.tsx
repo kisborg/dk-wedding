@@ -35,6 +35,7 @@ const Intro = () => {
             alt='main-image'
             className={styles['intro-image']}
             src={MainImage}
+            priority
           ></Image>
         </motion.div>
         <motion.div

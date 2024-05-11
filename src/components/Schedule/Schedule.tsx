@@ -10,7 +10,12 @@ const Schedule = () => {
     params.locale === 'en' ? ScheduleImageEn : ScheduleImageHu;
   return (
     <div className='schedule'>
-      <Image className='schedule-image' alt='schedule' src={scheduleImage} />
+      <Image
+        className='schedule-image'
+        alt='schedule'
+        src={scheduleImage}
+        priority
+      />
     </div>
   );
 };
