@@ -67,20 +67,20 @@ const Navbar = ({ onNavigation }: NavigationProps) => {
       <div className='language-switcher'>
         <LanguageSwitcher isSmall={isSmall} />
       </div>
-      <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('intro')}>{t('home')}</a>
+      <div onClick={() => onNavigation('intro')} className='nav-menu-item'>
+        {t('home')}
       </div>
-      <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('about-us')}>{t('aboutUs')}</a>
+      <div onClick={() => onNavigation('about-us')} className='nav-menu-item'>
+        {t('aboutUs')}
       </div>
-      <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('schedule')}>{t('schedule')}</a>
+      <div onClick={() => onNavigation('schedule')} className='nav-menu-item'>
+        {t('schedule')}
       </div>
       {/* <div className='nav-menu-item'>
         <a onClick={() => onNavigation('rsvp')}>{t('rsvp')}</a>
       </div> */}
-      <div className='nav-menu-item'>
-        <a onClick={() => onNavigation('venue')}>{t('venue')}</a>
+      <div onClick={() => onNavigation('venue')} className='nav-menu-item'>
+        {t('venue')}
       </div>
     </nav>
   );

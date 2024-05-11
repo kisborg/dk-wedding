@@ -14,7 +14,7 @@ const Schedule = () => {
         className='schedule-image'
         alt='schedule'
         src={scheduleImage}
-        priority
+        quality={50}
       />
     </div>
   );

@@ -49,6 +49,7 @@
       letter-spacing 500ms;
 
     @include tablet {
+      cursor: default;
       font-size: fontSizes.$font-size-navbar;
       line-height: 50px;
       &:hover {
