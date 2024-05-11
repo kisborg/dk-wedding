@@ -365,7 +365,7 @@ const AboutUs = () => {
                 src={Goldblum}
                 className='goldblum-image'
                 alt='goldblum'
-                width={150}
+                width={250}
               />
             </div>
           </div>
@@ -383,7 +383,7 @@ const AboutUs = () => {
                 src={TheOffice}
                 className='firstkiss-image'
                 alt='the office celebration'
-                width={250}
+                width={350}
               />
             </div>
           </div>

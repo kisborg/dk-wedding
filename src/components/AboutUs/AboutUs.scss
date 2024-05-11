@@ -9,6 +9,11 @@
   margin-top: 100px;
   background-position: right center;
 
+  .vertical-timeline-element-date {
+    font-family: 'nickainley';
+    font-size: 32px;
+  }
+
   .main-image-container {
     margin-top: 10px;
     width: 100%;
@@ -48,7 +53,6 @@
 
   .vertical-timeline-element-content {
     margin-bottom: 50px;
-    max-width: 600px;
     background-color: rgba(white, 0.7);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
     border-radius: 30px;
@@ -59,7 +63,7 @@
     opacity: 1;
 
     &.vertical-timeline--two-columns {
-      font-size: fontSizes.$font-size-header !important;
+      font-size: 32px !important;
     }
   }
 
@@ -68,8 +72,8 @@
       .vertical-timeline-element-date {
         font-weight: 700;
 
-        font-size: fontSizes.$font-size-header !important;
-        top: 0;
+        font-size: 32px !important;
+        top: -15px;
       }
     }
   }
@@ -113,6 +117,16 @@
   margin-top: 30px;
   padding-top: 0;
   padding-bottom: 0;
+
+  @media (max-width: 1169px) {
+    .vertical-timeline-element-date {
+      padding: 10px 20px;
+      border-radius: 25px;
+      background: rgba(129, 143, 180, 0.2);
+      font-size: 20px;
+      margin-top: 10px;
+    }
+  }
 }
 
 .bottom-timeline-container {
@@ -219,7 +233,20 @@
     .image-container {
       width: 100%;
       display: flex;
-      justify-content: flex-start;
+      justify-content: flex-end;
+
+      img {
+        margin-right: 50px;
+        max-width: 100%;
+        height: auto;
+      }
+
+      @include tablet {
+        justify-content: center;
+        img {
+          margin-right: 0;
+        }
+      }
     }
 
     &.shesaidyes {
@@ -227,10 +254,16 @@
         width: 100%;
         justify-content: center;
         img {
-          max-width: 100%;
-          height: auto;
+          margin: 0;
         }
       }
     }
+  }
+  .vertical-timeline-element-date {
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: rgba(129, 143, 180, 0.2);
+    font-size: 20px;
+    margin-top: 10px;
   }
 }
