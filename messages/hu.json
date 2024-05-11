@@ -56,6 +56,7 @@
     "submit_error_detail": "Kérlek frissitsd az oldalt és próbáld meg újra."
   },
   "AboutUs": {
+    "TITLE": "A mi kis történetünk...",
     "1988D": "Dani megszületett Budapesten és megkezdte több éves káoszos rosszalkodását.",
     "1990D": "Dani apukáját a munka Bulgáriába szólította, így vele együtt költözött az egész család is. A magyar, angol, svéd nyelvi triumvirátust kiegészítette innentől a bolgár nyelv is. Dani ezért úgy döntött 2 és fél éves koráig inkább nem kezd el beszélni. Azóta viszont be sem áll a szája.",
     "1990K": "Kriszti megszületett egy hideg, északi városkában, Umeå-ban.",
@@ -85,7 +86,7 @@
     "TEMPLE_INSTRUCTION_1": "A szentendrei skanzen parkolójának bejárata előtt lesz egy kis rét jobboldalt (Szentendréről érkezve), ez lesz a dedikált parkolási terület az esküvőnk vendégei részére.",
     "TEMPLE_INSTRUCTION_2": "Innen öcséink (Marci és Tomi) fognak tovább navigálni Titeket a templom irányába!",
     "TEMPLE_INSTRUCTION_3": "Kérjük érkezzetek időben (13:30 és 45 között), mert a parkolóból még vár rátok egy pár perces séta :)",
-    "TITLE_RESTAURANT": "II. Polgári szertarttás",
+    "TITLE_RESTAURANT": "II. Polgári szertartás",
     "ARRIVAL_RESTAURANT": "Érkezés 17:00 előtt.",
     "LOCATION_RESTAURANT": "<bold>Helyszín:</bold> Rosinante Fogadó, cím: 2015 Szigetmonostor, Hrsz.: 057/2",
     "RESTAURANT_INSTRUCTION_1": "Javasolt útvonal: Tahitótfalun keresztül a Tildy Zoltán hídon át a Rosinantéig (Skanzenből kb 30 perc az út).",

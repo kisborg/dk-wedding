@@ -24,16 +24,16 @@
 
   .title-container {
     font-family: 'nickainley';
-    padding: 20px;
+    padding: 10px 20px;
     margin: 20px;
     margin-bottom: 0;
-    border-radius: 10px;
-    background-color: rgba(79, 111, 82, 0.1);
+    border-radius: 40px;
+    background-color: rgba(129, 143, 180, 0.15);
 
     @media only screen and (min-width: 1170px) {
       display: flex;
       justify-content: center;
-      margin: 20px 200px 0px 200px;
+      margin: 20px 300px 0px 300px;
     }
   }
   .empty-container {
@@ -51,7 +51,7 @@
     max-width: 600px;
     background-color: rgba(white, 0.7);
     box-shadow: rgba(0, 0, 0, 0.2) 0px 20px 30px;
-    border-radius: 10px;
+    border-radius: 30px;
   }
 
   .vertical-timeline-element-date {
@@ -101,7 +101,7 @@
 .vertical-timeline::before {
   /* this is the vertical line */
 
-  background: rgba(79, 111, 82, 0.1) !important;
+  background-color: rgba(129, 143, 180, 0.2);
 }
 
 .vertical-timeline-element-icon {
@@ -173,6 +173,21 @@
         position: absolute;
         bottom: -10px;
         right: 0;
+      }
+
+      &.baby-photo {
+        flex-direction: column;
+        p {
+          margin-bottom: 10px;
+        }
+
+        .image-container {
+          position: relative;
+          img {
+            width: 200px;
+            height: auto;
+          }
+        }
       }
 
       &.cocktail {

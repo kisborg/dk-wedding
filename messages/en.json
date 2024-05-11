@@ -56,6 +56,7 @@
     "submit_error_detail": "Please, refresh the page and try again."
   },
   "AboutUs": {
+    "TITLE": "Our story...",
     "1988D": "Daniel was born in Budapest, and thus began a multi-year period  of chaotic mischief.",
     "1990D": "Daniel's dad got “called for duty” in Bulgaria, so the family moved abroad and Bulgarian joined the already tricky Swedish-Hungarian-English (“Swunglish”) language environment. Daniel found this too much to handle so he decided to hold off from speaking until the age of 2.5 years. Since then however he's not shied away one bit from talking.",
     "1990K": "Krisztina was born in a cold, northern little town, called Umeå.",
@@ -71,7 +72,7 @@
     "2018K": "Krisztina successfully completed her first triathlon race, which became the starting point for a passionate hobby that remains a very important part of her life even these days.Interestingly enough Daniel completed his first triathlon race last year:)",
     "2022KD": "Krisztina and Daniel met for the first time since the secondary school years for a nostalgic chat about the “good old times”. Shortly afterwards they scheduled their first date:).",
     "2022KDXXX": "The First Kiss:)",
-    "2023KD": "At the end of a 10k run in Stockholm Daniel got down to one knee and “popped the question” to which Krisztina responded “YES” (luckily the knees functioned well that day).",
+    "2023KD": "At the end of a 10k run in Stockholm Daniel got down to one knee and “popped the question” to which Krisztina responded <bold>“YES”</bold> (luckily the knees functioned well that day).",
     "DATE_2022_SEP": "2022 September",
     "DATE_2022_OCT": "2022 8th October",
     "DATE_2023_OCT": "2023 8th October"

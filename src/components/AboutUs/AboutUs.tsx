@@ -25,8 +25,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import MainPic from '../../../public/images/about_us_main.png';
-import BabyBoy from '../../../public/images/baby_boy.png';
-import BabyGirl from '../../../public/images/baby_girl.png';
+import BabyBoy from '../../../public/images/dani_baba.png';
+import BabyGirl from '../../../public/images/kriszti_baba.png';
 import KneeIcon from '../../../public/images/knee_icon.svg';
 import KneeGif from '../../../public/images/knee.gif';
 import RingIcon from '../../../public/images/ring_small.svg';
@@ -94,7 +94,7 @@ const AboutUs = () => {
         <Image src={MainPic} alt='group photo' />
       </div>
       <div className='title-container'>
-        <h1 className='title'>A mi kis történetünk...</h1>
+        <h1 className='title'>{t('TITLE')}</h1>
       </div>
       <VerticalTimeline
         className={`top-timeline-container ${quicksand.className}`}
@@ -106,7 +106,7 @@ const AboutUs = () => {
           position='left'
           icon={<FontAwesomeIcon icon={faBaby} />}
         >
-          <div className='story-container'>
+          <div className='story-container baby-photo'>
             <p>{t('1988D')}</p>
             <div className='image-container'>
               <Image
@@ -125,7 +125,7 @@ const AboutUs = () => {
           position='right'
           icon={<FontAwesomeIcon icon={faBabyCarriage} />}
         >
-          <div className='story-container'>
+          <div className='story-container baby-photo'>
             <p>{t('1990K')}</p>
             <div className='image-container'>
               <Image
