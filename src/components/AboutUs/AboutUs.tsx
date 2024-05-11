@@ -91,7 +91,7 @@ const AboutUs = () => {
   return (
     <div className='about-us' ref={ref} onScroll={handleScroll}>
       <div className='main-image-container'>
-        <Image src={MainPic} alt='group photo' />
+        <Image src={MainPic} alt='group photo' priority />
       </div>
       <div className='title-container'>
         <h1 className='title'>{t('TITLE')}</h1>
@@ -113,7 +113,8 @@ const AboutUs = () => {
                 src={BabyBoy}
                 className='baby-image'
                 alt='baby'
-                width={70}
+                priority
+                unoptimized
               />
             </div>
           </div>
@@ -132,7 +133,8 @@ const AboutUs = () => {
                 src={BabyGirl}
                 className='baby-image'
                 alt='baby'
-                width={70}
+                priority
+                unoptimized
               />
             </div>
           </div>
