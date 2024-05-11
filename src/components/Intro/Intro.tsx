@@ -30,6 +30,7 @@ const Intro = () => {
             type: 'spring',
           }}
           initial={{ scale: 0, rotate: -40 }}
+          className={styles['intro-image-container']}
         >
           <Image
             alt='main-image'

@@ -391,7 +391,7 @@ const AboutUs = () => {
           </div>
         </TimelineElement>
         <TimelineElement
-          className='vertical-timeline-element--work'
+          className='vertical-timeline-element--work final-timeline-element'
           date={t('DATE_2023_OCT')}
           iconStyle={{ background: 'rgb(33, 150, 243)', color: '#fff' }}
           icon={<RingIcon />}

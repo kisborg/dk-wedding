@@ -16,9 +16,10 @@
   border-bottom: 1px solid rgba(colors.$blueberry-blue, 0.2);
   width: 80%;
   max-width: 1000px;
-  height: 50px;
+  height: 70px;
 
   @media (max-width: 768px) {
+    height: 50px;
     width: 100%;
   }
 
@@ -27,7 +28,8 @@
   }
 
   .nav-menu-item {
-    line-height: 50px;
+    user-select: none;
+    line-height: 70px;
     font-size: fontSizes.$font-size-navbar-large;
     font-weight: fontSizes.$font-weight-bold;
     vertical-align: center;
@@ -48,6 +50,7 @@
 
     @include tablet {
       font-size: fontSizes.$font-size-navbar;
+      line-height: 50px;
       &:hover {
         font-size: fontSizes.$font-size-navbar-hover;
       }
