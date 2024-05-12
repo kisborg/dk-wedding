@@ -96,5 +96,21 @@
     "BUS_INSTRUCTION": "A szervezett busszal érkezőket 12:30-kor veszi fel a busz a Battyhányi téren és viszi csomagokkal együtt a Skanzenba majd a Rosinantéba (további információk az érintetteknek személyesen).",
     "GREETING": "Sok szeretettel,",
     "CONTACT": "Kérdés esetén nyugodtan keressétek a ceremóniamesterünket, Csongort (+36302918729)"
+  },
+  "Schedule": {
+    "CHURCH_CEREMONY": "TEMPLOMI SZERTARTÁS",
+    "RECEPTION": "VENDÉGVÁRÁS",
+    "CIVIL_CEREMONY": "POLGÁRI SZERTARTÁS",
+    "DINNER": "VACSORA",
+    "OPENING_DANCE": "NYITÓTÁNC",
+    "CAKE_CUTTING": "TORTAVÁGÁS",
+    "PARTY": "BULI",
+    "1400": "14.00",
+    "1630": "16.30",
+    "1730": "17.30",
+    "1900": "19.00",
+    "2100": "21.00",
+    "2300": "23.00",
+    "2330": "23.30"
   }
 }

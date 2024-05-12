@@ -96,5 +96,21 @@
     "BUS_INSTRUCTION": "For our guest arriving with the organised transportation, please be at Battyhány square at 12:30 pm (further information will be send out in private).",
     "GREETING": "With love,",
     "CONTACT": "In case of any question, do not hesitate to reach out to our event organiser, Csongor (+36302918729)"
+  },
+  "Schedule": {
+    "CHURCH_CEREMONY": "WEDDING CEREMONY",
+    "RECEPTION": "RECEPTION",
+    "CIVIL_CEREMONY": "CIVIL CEREMONY",
+    "DINNER": "DINNER",
+    "OPENING_DANCE": "OPENING DANCE",
+    "CAKE_CUTTING": "CAKE CUTTING",
+    "PARTY": "PARTY",
+    "1400": "14.00",
+    "1630": "16.30",
+    "1730": "17.30",
+    "1900": "19.00",
+    "2100": "21.00",
+    "2300": "23.00",
+    "2330": "23.30"
   }
 }

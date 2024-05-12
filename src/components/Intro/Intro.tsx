@@ -42,7 +42,7 @@ const Intro = () => {
         <motion.div
           className='date-animation-container'
           animate={{ width: '100%', display: 'flex', justifyContent: 'center' }}
-          transition={{ duration: 2, delay: 1 }}
+          transition={{ duration: 2, delay: 0.5 }}
           initial={{ width: '0px', overflow: 'hidden' }}
         >
           <div className={styles.date}>
